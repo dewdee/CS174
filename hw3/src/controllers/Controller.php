@@ -11,8 +11,8 @@ require_once(ROOT.'/src/models/noteModel.php');
 require_once(ROOT.'/src/views/indexView.php');
 
 abstract class Controller{
-    public $listModel;
-    public $noteModel;
+    private $listModel;
+    private $noteModel;
     public $view;
 
     public function __construct(){
