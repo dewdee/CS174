@@ -6,17 +6,19 @@
  */
 namespace models;
 
-require_once(ROOT.'/src/configs/config.php');
 
 abstract class Model{
-    private $connection;
+    protected $connection;
 
     public function connect(){
         //call variables into function scope
+        require_once(ROOT.'/src/configs/config.php');
         global $host, $username, $password;
         $this->connection = new \mysqli($host, $username, $password);
         if($this->connection->connect_error){
             die("Connection failed: " . $this->connection->connect_error);
         }
     }
+    public abstract function insertQuery($sql);
+    public abstract function selectQuery($sql);
 }

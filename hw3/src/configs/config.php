@@ -2,5 +2,5 @@
 
 $host = "localhost";
 $username = "root";
-$password = "password";
+$password = "root";
 $database = "hw3_mn";

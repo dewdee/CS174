@@ -3,9 +3,9 @@
 namespace views;
 
 require_once 'View.php';
-require_once(ROOT.'/src/views/layouts/indexLayout.php');
+require_once(ROOT . '/src/views/layouts/landingLayout.php');
 
-class indexView extends View{
+class landingView extends View{
     public  function render($data = []){
         ?>
         <h1><a href="index.php"><?php
@@ -14,14 +14,14 @@ class indexView extends View{
                 }?>
             </a>
         </h1>
-        <h2>
+
             <table>
                 <tr>
                     <th>
-                        Lists
+                        <h2>Lists</h2>
                     </th>
                     <th colspan="2">
-                        Notes
+                        <h2>Notes</h2>
                     </th>
                 </tr>
                 <tr>
@@ -39,7 +39,6 @@ class indexView extends View{
                     </td>
                 </tr>
             </table>
-        </h2>
         <?php
     }
 }

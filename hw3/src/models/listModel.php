@@ -11,4 +11,11 @@ class listModel extends Model{
     public function __construct(){
         $this->connect();
     }
+    public  function insertQuery($sql){
+        // TODO: Implement insertQuery() method.
+
+    }
+    public  function selectQuery($sql){
+        // TODO: Implement selectQuery() method.
+    }
 }

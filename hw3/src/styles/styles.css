@@ -1,0 +1,16 @@
+ul{
+    float: left;
+    margin: 0 0px;
+}
+th{
+    text-align: center;
+    border-left: solid 35px transparent;
+}
+h1{
+    font-size: 36px;
+}
+h2{
+    font-size: 24px;
+    float: left;
+    margin: 0 5px;
+}

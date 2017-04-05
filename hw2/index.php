@@ -4,7 +4,7 @@ Determines what activity we will perform and calls the corresponding controller
 */
 $activity = (isset($_REQUEST['a']) && in_array($_REQUEST['a'], 
 	["main", "create", "edit", "save", "delete", "read", "confirm"])) 
-	? $_REQUEST['a'] . "Controller" : "mainController";
+	? $_REQUEST['a'] . "Controller" : "noteController";
 $activity();
 /*
 getTextFiles
@@ -24,7 +24,7 @@ function getTextFiles($entries){
     return $entries;
 }
 /*
-mainController
+noteController
 Controls all functionality of the main page
 */
 function mainController(){

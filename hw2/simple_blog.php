@@ -12,7 +12,7 @@
 define("BLOG_FILE", "blog.txt");
 // Determine which activity to perform and call it
 $activity = (isset($_REQUEST['a']) && in_array($_REQUEST['a'], [
-    "main", "entry"])) ? $_REQUEST['a'] . "Controller" : "mainController";
+    "main", "entry"])) ? $_REQUEST['a'] . "Controller" : "noteController";
 $activity();
 /**
  * Used to process perform activities realated to the blog landing page

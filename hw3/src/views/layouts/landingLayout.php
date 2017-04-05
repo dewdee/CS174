@@ -2,11 +2,13 @@
 
 require_once 'Layout.php';
 
-class indexLayout extends Layout{
+class landingLayout extends Layout{
     public function renderHeader($data){
         ?>
         <!DOCTYPE html>
+        <html>
         <head>
+            <link rel="stylesheet" type="text/css" href="src/styles/styles.css"/>
             <title><?php
                 if(!empty($data['title'])){
                     echo $data['title'];
