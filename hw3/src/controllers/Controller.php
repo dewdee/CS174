@@ -12,10 +12,10 @@ spl_autoload_register(function ($className) {
     require_once($file);
 });
 abstract class Controller{
-    private $view;
+    protected $view;
+    protected $model;
 
-    public function __construct($data){
-        $this->view = new \views\landingView("landingLayout");
-        $this->view->display($data);
-    }
+    public abstract function add();
+    public abstract function select();
+    public abstract function display();
 }

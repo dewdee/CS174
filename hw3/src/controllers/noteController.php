@@ -6,17 +6,18 @@ namespace controllers;
 require_once 'Controller.php';
 
 class noteController extends Controller{
-    private $noteModel;
-
     public function __construct($data){
-        parent::__construct($data);
-        $this->noteModel = new \models\noteModel();
-    }
-
-    public function addNote(){
+        $this->model = new \models\noteModel();
 
     }
-    public function selectNote(){
+    public  function add(){
+        // TODO: Implement add() method.
+    }
+    public function select(){
 
+    }
+    public function display(){
+        $data['notes'] = $this->model->selectMultiple();
+        return $data['notes'];
     }
 }
