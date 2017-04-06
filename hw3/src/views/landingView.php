@@ -3,9 +3,14 @@
 namespace views;
 
 require_once 'View.php';
-require_once(ROOT . '/src/views/layouts/landingLayout.php');
+require_once (LAYOUT_PATH."landingLayout.php");
 
 class landingView extends View{
+    public function __construct($layout){
+        parent::__construct($layout);
+
+    }
+
     public  function render($data = []){
         ?>
         <h1><a href="index.php"><?php
@@ -26,15 +31,12 @@ class landingView extends View{
                 </tr>
                 <tr>
                     <td><ul>
-                            <li><a href="index.php?a=newList">[New List]</a></li>
-                            <li><b>list 1</b></li>
-                            <li><b>list 2</b></li>
+                            <li><a href="index.php?c=listController&m=listModel&a=new">[New List]</a></li>
                         </ul>
                     </td>
                     <td><ul>
-                            <li><a href="index.php?a=newNote">[New Note]</a></li>
-                            <li><b>note 1</b></li>
-                            <li><b>note 2</b></li>
+                            <li><a href="index.php?c=noteController&m=noteModel&a=new">[New Note]</a></li>
+
                         </ul>
                     </td>
                 </tr>

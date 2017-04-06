@@ -2,10 +2,26 @@
 
 namespace mn\hw3;
 
-define('ROOT', dirname(__FILE__));
-require_once 'src/controllers/listController.php';
-require_once 'src/models/listModel.php';
-require_once 'src/views/landingView.php';
+require_once 'src/configs/config.php';
+
+spl_autoload_register(function ($className) {
+    //autoload function is simple due to namespaces
+    $file = ROOT.$className.'.php';
+    require_once($file);
+});
 
 $data['title'] = "Note-A-List";
-$controller = new \controllers\listController($data);
+//$controller = new \controllers\listController($data);
+$view = new \views\landingView("landingLayout");
+$view->display($data);
+if(isset($_REQUEST['m']) && isset($_REQUEST['c']) && isset($_REQQEST['a'])){
+    $model = $_REQUEST['m'];
+    $controller = $_REQUEST['c'];
+    $action = $_REQUEST['a'];
+    if($controller == "listController"){
+
+    }
+    else if($controller == "noteController"){
+
+    }
+}

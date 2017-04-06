@@ -7,10 +7,10 @@
  */
 namespace controllers;
 
-require_once(ROOT.'/src/models/listModel.php');
-require_once(ROOT.'/src/models/noteModel.php');
-require_once(ROOT . '/src/views/landingView.php');
-
+spl_autoload_register(function ($className) {
+    $file = ROOT.$className.'.php';
+    require_once($file);
+});
 abstract class Controller{
     private $view;
 

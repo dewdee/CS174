@@ -12,7 +12,7 @@ abstract class Model{
 
     public function connect(){
         //call variables into function scope
-        require_once(ROOT.'/src/configs/config.php');
+        require_once(CONFIG_PATH."config.php");
         global $host, $username, $password;
         $this->connection = new \mysqli($host, $username, $password);
         if($this->connection->connect_error){
