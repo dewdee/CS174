@@ -19,7 +19,7 @@ class noteModel extends Model{
         // TODO: Implement selectQuery() method.
     }
     public function selectMultiple(){
-        $sql = "SELECT name FROM notes ORDER BY NAME DESC";
+        $sql = "SELECT name, date FROM notes ORDER BY name DESC";
         $notes = [];
         if($result = $this->connection->query($sql)){
             while($row = $result->fetch_row()){

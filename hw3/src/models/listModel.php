@@ -19,7 +19,7 @@ class listModel extends Model{
         // TODO: Implement selectQuery() method.
     }
     public function selectMultiple(){
-        $sql = "SELECT name FROM lists";
+        $sql = "SELECT name FROM lists ORDER BY name DESC";
         $lists = [];
         if($result = $this->connection->query($sql)){
             while($row = $result->fetch_row()){

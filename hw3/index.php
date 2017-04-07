@@ -17,7 +17,7 @@ $listController = new \controllers\listController($data);
 $noteController = new \controllers\noteController($data);
 $data['lists'] = $listController->display();
 $data['notes'] = $noteController->display();
-print_r($data['notes']);
+
 $view = new \views\landingView("landingLayout");
 $view->display($data);
 
@@ -25,10 +25,16 @@ if(isset($_REQUEST['c']) && isset($_REQUEST['c']) && isset($_REQUEST['c'])){
     $data['c'] = (isset($_REQUEST['c'])) ? filter_var($_REQUEST['c'], FILTER_SANITIZE_STRING) : "";
     $data['m'] = (isset($_REQUEST['m'])) ? filter_var($_REQUEST['m'], FILTER_SANITIZE_STRING) : "";
     $data['a'] = (isset($_REQUEST['a'])) ? filter_var($_REQUEST['a'], FILTER_SANITIZE_STRING) : "";
-    if($data['c'] == "listController" && $data['a'] == "new"){
+    if($data['c'] == "listController" && $data['a'] == "newList"){
         $listController->add();
     }
-    else if($data['c'] == "noteController" && $data['a'] == "new"){
-        $noteController->select();
+    else if($data['c'] == "noteController" && $data['a'] == "newNote"){
+        $noteController->add();
+    }
+    else if($data['c'] == "listController" && $data['a'] == "selectList"){
+        $noteController->add();
+    }
+    else if($data['c'] == "noteController" && $data['a'] == "selectNote"){
+        $noteController->add();
     }
 }

@@ -31,12 +31,29 @@ class landingView extends View{
                 </tr>
                 <tr>
                     <td><ul>
-                            <li><a href="index.php?c=listController&m=listModel&a=new">[New List]</a></li>
+                            <li><a href="index.php?c=listController&m=listModel&a=newList">[New List]</a></li>
+                            <?php
+                                if(!empty($data['lists'])){
+                                    foreach($data['lists'] as $name){
+                                        ?>
+                                        <li><a href="index.php?c=listController&m=listModel&a=view&listName=<?=urlencode($name)?>"><?=$name?></a></li>
+                                        <?php
+                                    }
+                                }
+                            ?>
                         </ul>
                     </td>
                     <td><ul>
-                            <li><a href="index.php?c=noteController&m=noteModel&a=new">[New Note]</a></li>
-
+                            <li><a href="index.php?c=noteController&m=noteModel&a=newNote">[New Note]</a></li>
+                            <?php
+                            if(!empty($data['notes'])){
+                                foreach($data['notes'] as $name){
+                                    ?>
+                                    <li><a href="index.php?c=noteController&m=noteModel&a=view&noteName=<?=urlencode($name)?>"><?=$name?></a></li>
+                                    <?php
+                                }
+                            }
+                            ?>
                         </ul>
                     </td>
                 </tr>
