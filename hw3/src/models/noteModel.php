@@ -5,6 +5,9 @@ namespace models;
 require_once 'Model.php';
 
 class noteModel extends Model{
+    public function insert($data){
+
+    }
     public function selectMultiple(){
         $sql = "SELECT name, created FROM notes ORDER BY created DESC";
         $notes = [];

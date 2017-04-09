@@ -7,7 +7,7 @@ class newListLayout extends \Layout {
             <head>
                 <link rel="stylesheet" type="text/css" href="src/styles/styles.css"/>
                 <title> This is a temporary title
-            </title>
+                </title>
             </head>
             <body>
         <?php

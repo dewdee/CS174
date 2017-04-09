@@ -18,5 +18,7 @@ abstract class Model{
             die("Connection failed: " . $this->connection->connect_error);
         }
     }
+
+    public abstract function insert($data);
     public abstract function selectMultiple();
 }

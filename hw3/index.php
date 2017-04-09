@@ -31,15 +31,16 @@ function bootstrap(){
         $controller->index();
     }
     else{
-        if(isset($_REQUEST['c']) && $_REQUEST['c'] = "listController"){
-            if(isset($_REQUEST['m']) && $_REQUEST['m'] = "newList"){
+        if(isset($_REQUEST['c']) && $_REQUEST['c'] == "listController"){
+            if(isset($_REQUEST['m']) && $_REQUEST['m'] == "newList"){
                 $controller = new \controllers\newListController();
                 $controller->index();
+                $controller->add();
             }
-            else if(isset($_REQUEST['m']) && $_REQUEST['m'] = "selectList"){
+            /*else if(isset($_REQUEST['m']) && $_REQUEST['m'] = "selectList"){
                 $controller = new \controllers\selectListController();
                 $controller->index();
-            }
+            }*/
         }
         else if(isset($_REQUEST['c']) && $_REQUEST['c'] = "noteController"){
 
