@@ -3,7 +3,13 @@
 namespace controllers;
 
 
-class Controller
-{
+abstract class Controller {
+    protected $view;
+    protected $model;
+
+    public function __construct() {
+        $this->model = [];
+        print_r($this->model);
+    }
 
 }
