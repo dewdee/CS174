@@ -67,7 +67,7 @@ function processNewBlogEntries($entries)
     return $entries;
 }
 /**
- * Used to set up and then display the view corresponding to a single blog
+ * Used to set up and then display the views corresponding to a single blog
  * post.
  */
 function entryController()
@@ -86,12 +86,12 @@ function entryController()
 }
 /**
  * Used to output the top and bottom boilerplate of a Web page. Within
- * the body of the document the passed $view is draw
+ * the body of the document the passed $views is draw
  *
  * @param array $data an associative array of field variables which might
- *  be echo'd by either this layout in the title, or by the view that is
+ *  be echo'd by either this layout in the title, or by the views that is
  *  draw in the body
- * @param string $view name of view function to call to draw body of web page
+ * @param string $view name of views function to call to draw body of web page
  */
 function htmlLayout($data, $view)
 {

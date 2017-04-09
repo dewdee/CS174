@@ -134,9 +134,9 @@ function confirmController(){
 }
 /*
 htmlLayout
-Deals with all of the initial HTML information and draws the current view.
-@param array $data contains the name and content of a file to possibly be echo'd to title or by 	the view
-@param string $view is the name of the view function to call to draw body of web page
+Deals with all of the initial HTML information and draws the current views.
+@param array $data contains the name and content of a file to possibly be echo'd to title or by 	the views
+@param string $views is the name of the views function to call to draw body of web page
 */
 function htmlLayout($data, $view){
 	?><!DOCTYPE html>
