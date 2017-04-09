@@ -11,8 +11,17 @@ class noteModel extends Model{
         $note = $data['noteContent'];
         $created = date("Y-m-d");
         $sql = "INSERT INTO notes VALUES(NULL, '$noteName', '$note','$created' ,'$parent_id')";
-        echo $sql;
         $this->connection->query($sql);
+    }
+    public function select(string $noteName){
+        $sql = "SELECT name, note FROM notes WHERE name = '$noteName'";
+        if($result = $this->connection->query($sql)){
+            $row = $result->fetch_row();
+            $name = $row[0];
+            $content = $row[1];
+            $note = [$name => $content];
+            return $note;
+        }
     }
     public function selectMultiple(){
         $sql = "SELECT name, created FROM notes ORDER BY created DESC";

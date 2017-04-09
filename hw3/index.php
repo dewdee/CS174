@@ -48,6 +48,11 @@ function bootstrap(){
                 $controller->index();
                 $controller->add();
             }
+            else if(isset($_REQUEST['m']) && $_REQUEST['m'] == "selectNote" && isset($_REQUEST['noteName'])){
+                $controller = new \controllers\selectNoteController();
+                $noteName = $_REQUEST['noteName'];
+                $controller->index($noteName);
+            }
         }
     }
 }

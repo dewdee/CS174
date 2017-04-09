@@ -2,7 +2,7 @@
 
 require_once 'Layout.php';
 
-class newListLayout extends \Layout {
+class selectNoteLayout extends Layout{
     public function renderHeader($data){
         ?>
             <html>
