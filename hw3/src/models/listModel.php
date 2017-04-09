@@ -8,12 +8,11 @@ namespace models;
 require_once 'Model.php';
 
 class listModel extends Model{
-    public function __construct(){
-        $this->connection = $this->connect();
-    }
-    public  function insertQuery(){
-        // TODO: Implement insertQuery() method.
-
+    public  function insertQuery($data){
+        $listName = $data["listName"];
+        $parent_id = $data["parent_id"];
+        $sql = "INSERT INTO lists (NULL, '$listName', '$parent_id')";
+        $this->connection->query($sql);
     }
     public  function selectQuery(){
         // TODO: Implement selectQuery() method.

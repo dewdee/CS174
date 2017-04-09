@@ -10,17 +10,16 @@ namespace models;
 abstract class Model{
     protected $connection;
 
-    public function connect(){
+    public function __construct(){
         //call variables into function scope
         require_once(CONFIG_PATH."config.php");
         global $host, $username, $password, $database;
-        $connection = new \mysqli($host, $username, $password, $database);
-        if($connection->connect_error){
-            die("Connection failed: " . $connection->connect_error);
+        $this->connection = new \mysqli($host, $username, $password, $database);
+        if($this->connection->connect_error){
+            die("Connection failed: " . $this->connection->connect_error);
         }
-        return $connection;
     }
-    public abstract function insertQuery();
+    public abstract function insertQuery($data);
     public abstract function selectQuery();
     public abstract function selectMultiple();
 }

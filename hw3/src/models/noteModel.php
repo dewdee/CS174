@@ -8,22 +8,20 @@ namespace models;
 require_once 'Model.php';
 
 class noteModel extends Model{
-    public function __construct(){
-        $this->connection = $this->connect();
-    }
+    public  function insertQuery($data){
 
-    public  function insertQuery(){
-        // TODO: Implement insertQuery() method.
     }
     public function selectQuery(){
         // TODO: Implement selectQuery() method.
     }
     public function selectMultiple(){
-        $sql = "SELECT name, date FROM notes ORDER BY name DESC";
+        $sql = "SELECT name, created FROM notes ORDER BY created DESC";
         $notes = [];
         if($result = $this->connection->query($sql)){
             while($row = $result->fetch_row()){
-                $notes = array_merge($row, $notes);
+                $name = $row[0];
+                $created = $row[1];
+                $notes = array_merge([$name => $created], $notes);
             }
         }
 

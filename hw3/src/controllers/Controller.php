@@ -15,7 +15,7 @@ abstract class Controller{
     protected $view;
     protected $model;
 
-    public abstract function add();
+    public abstract function add($data);
     public abstract function select();
     public abstract function display();
 }

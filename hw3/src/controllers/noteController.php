@@ -8,13 +8,13 @@ require_once 'Controller.php';
 class noteController extends Controller{
     public function __construct($data){
         $this->model = new \models\noteModel();
-
     }
-    public  function add(){
+    public  function add($data){
         // TODO: Implement add() method.
+        return $this->view;
     }
     public function select(){
-
+        return $this->view;
     }
     public function display(){
         $data['notes'] = $this->model->selectMultiple();
