@@ -6,7 +6,13 @@ require_once 'Model.php';
 
 class noteModel extends Model{
     public function insert($data){
-
+        $noteName = $data["noteName"];
+        $parent_id = $data["parent_id"];
+        $note = $data['noteContent'];
+        $created = date("Y-m-d");
+        $sql = "INSERT INTO notes VALUES(NULL, '$noteName', '$note','$created' ,'$parent_id')";
+        echo $sql;
+        $this->connection->query($sql);
     }
     public function selectMultiple(){
         $sql = "SELECT name, created FROM notes ORDER BY created DESC";

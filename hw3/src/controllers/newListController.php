@@ -7,7 +7,6 @@ require_once 'Controller.php';
 class newListController extends Controller{
     public function __construct() {
         parent::__construct();
-        echo 'controller created<br/>';
         $this->view = new \views\newListView("newListLayout");
     }
     public function index(){

@@ -43,7 +43,11 @@ function bootstrap(){
             }*/
         }
         else if(isset($_REQUEST['c']) && $_REQUEST['c'] = "noteController"){
-
+            if(isset($_REQUEST['m']) && $_REQUEST['m'] == "newNote"){
+                $controller = new \controllers\newNoteController();
+                $controller->index();
+                $controller->add();
+            }
         }
     }
 }

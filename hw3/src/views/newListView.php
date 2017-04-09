@@ -7,6 +7,9 @@ namespace views;
 class newListView extends View {
     public function render($data = []){
         ?>
+        <h1><a href="index.php">Title
+            </a>
+        </h1>
             <h1>New List</h1>
             <form method="get">
                 <input type="hidden" name="m" value="newList">

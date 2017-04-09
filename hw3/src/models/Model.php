@@ -10,7 +10,6 @@ abstract class Model{
     protected $connection;
 
     public function __construct() {
-        echo "model constructed<br/>";
         require_once(CONFIG_PATH."config.php");
         global $host, $username, $password, $database;
         $this->connection = new \mysqli($host, $username, $password, $database);

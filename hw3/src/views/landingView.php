@@ -37,7 +37,7 @@ class landingView extends View {
                     </ul>
                 </td>
                 <td><ul>
-                        <li><a href="index.php?c=noteController&m=newModel&a=new">[New Note]</a></li>
+                        <li><a href="index.php?c=noteController&m=newNote&a=new">[New Note]</a></li>
                         <?php
                         if(!empty($data['notes'])){
                             foreach($data['notes'] as $name => $created){

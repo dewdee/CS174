@@ -9,7 +9,6 @@ abstract class Controller {
 
     public function __construct() {
         $this->model = [];
-        print_r($this->model);
     }
 
 }
