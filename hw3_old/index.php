@@ -30,7 +30,7 @@ spl_autoload_register(function ($className) {
 
 function main(){
     if(!isset($_REQUEST['a'])){
-        //need to fetch lists and notes to send to view
+        //need to fetch lists and notes to send to views
         $data['title'] = "Note-A-List";
         $listController = new \controllers\listController($data);
         $noteController = new \controllers\noteController($data);
@@ -49,16 +49,16 @@ function main(){
             $listController->add($data);
         }
         else if($data['c'] == "noteController" && $data['a'] == "newNote"){
-            //$view = $noteController->add();
-            //$view->display($data);
+            //$views = $noteController->add();
+            //$views->display($data);
         }
         else if($data['c'] == "listController" && $data['a'] == "selectList"){
-            //$view = $noteController->select();
-            //$view->display($data);
+            //$views = $noteController->select();
+            //$views->display($data);
         }
         else if($data['c'] == "noteController" && $data['a'] == "selectNote"){
-            //$view = $noteController->select();
-            //$view->display($data);
+            //$views = $noteController->select();
+            //$views->display($data);
         }
 
     }
