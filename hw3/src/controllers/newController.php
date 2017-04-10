@@ -20,8 +20,8 @@ class newController extends Controller {
                 $this->model['list'] = new \models\listModel();
                 $this->view->display($data = []);
                 $parent_id = 0;
-                if(isset($_REQUEST['previousList']) && !empty($_REQUEST['previousList'])){
-                    $parent_id = $this->model['list']->getParentID($_REQUEST['previousList']);
+                if(isset($_REQUEST['currentList']) && !empty($_REQUEST['currentList'])){
+                    $parent_id = $this->model['list']->getParentID($_REQUEST['currentList']);
                 }
                 return $parent_id;
             }
@@ -31,8 +31,8 @@ class newController extends Controller {
                 $this->model['note'] = new \models\noteModel();
                 $this->view->display($data = []);
                 $parent_id = 0;
-                if(isset($_REQUEST['previousList']) && !empty($_REQUEST['previousList'])){
-                    $parent_id = $this->model['note']->getParentID($_REQUEST['previousList']);
+                if(isset($_REQUEST['currentList']) && !empty($_REQUEST['currentList'])){
+                    $parent_id = $this->model['note']->getParentID($_REQUEST['currentList']);
                 }
                 return $parent_id;
             }
@@ -45,9 +45,14 @@ class newController extends Controller {
                 $data['parent_id'] = $parent_id;
                 $this->model['list']->insert($data);
 
-                //redirect back to landing page, index.php
-
-                header('Location:index.php');
+                //redirect back to last visited list
+                if(isset($_REQUEST['currentList']) && !empty($_REQUEST['currentList'])){
+                    $url = "index.php?c=listController&m=selectList&previousList=" . $_REQUEST['previousList'] . "&listName=" . $_REQUEST['currentList'];
+                    header('Location:'.$url);
+                }
+                else if(isset($_REQUEST['currentList']) && empty($_REQUEST['currentList'])){
+                    header('Location:index.php');
+                }
             }
         }
         else if($type == 'note'){
@@ -58,7 +63,13 @@ class newController extends Controller {
                 $this->model['note']->insert($data);
 
                 //redirect back to landing page, index.php
-                header('Location:index.php');
+                if(isset($_REQUEST['currentList']) && !empty($_REQUEST['currentList'])){
+                    $url = "index.php?c=listController&m=selectList&previousList=" . $_REQUEST['previousList'] . "&listName=" . $_REQUEST['currentList'];
+                    header('Location:'.$url);
+                }
+                else if(isset($_REQUEST['currentList']) && empty($_REQUEST['currentList'])){
+                    header('Location:index.php');
+                }
             }
         }
 

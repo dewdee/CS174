@@ -6,6 +6,11 @@ require_once 'View.php';
 
 class selectNoteView extends View{
     public function render($data = []){
+        ?>
+        <h1><a href="index.php">Note-A-List
+            </a>
+        </h1>
+        <?php
         $noteName = key($data['note']);
         $content = $data['note'][$noteName];
         ?>
