@@ -4,7 +4,7 @@ namespace views;
 
 require_once 'View.php';
 
-class landingView extends View {
+class selectListView extends View{
     public function render($data = []){
         ?>
         <h1><a href="index.php">Title
@@ -25,7 +25,8 @@ class landingView extends View {
                         <?php
                             $current = isset($_REQUEST['listName']) ? $_REQUEST['listName'] : '';
                         ?>
-                        <li><a href="index.php?c=listController&m=newList&currentList=<?=urlencode($current)?>">[New List]</a></li>
+                        <li><a href="index.php?c=listController&m=newList&currentList=<?=urlencode($current)?>">[New
+                                List]</a></li>
                         <?php
                         if(!empty($data['lists'])){
                             foreach($data['lists'] as $name){
@@ -44,7 +45,7 @@ class landingView extends View {
                         if(!empty($data['notes'])){
                             foreach($data['notes'] as $name => $created){
                                 ?>
-                                <li><a href="index.php?c=noteController&m=selectNote&currentList=<?=urlencode($current)?>&noteName=<?=urlencode($name)
+                                <li><a href="index.php?c=noteController&m=selectNote&&currentList=<?=urlencode($current)?>&noteName=<?=urlencode($name)
                                     ?>"><?=$name?></a> <?=$created?></li>
                                 <?php
                             }

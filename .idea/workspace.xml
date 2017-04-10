@@ -2,15 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d48a4fb5-0521-4755-840e-ed47ba172501" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw3/src/controllers/selectNoteController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw3/src/views/layouts/selectNoteLayout.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw3/src/views/selectNoteView.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw3/src/views/layouts/selectListLayout.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw3/src/views/selectListView.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/index.php" afterPath="$PROJECT_DIR$/hw3/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/src/controllers/landingController.php" afterPath="$PROJECT_DIR$/hw3/src/controllers/landingController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/src/controllers/newListController.php" afterPath="$PROJECT_DIR$/hw3/src/controllers/newListController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/src/controllers/newNoteController.php" afterPath="$PROJECT_DIR$/hw3/src/controllers/newNoteController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/src/controllers/selectListController.php" afterPath="$PROJECT_DIR$/hw3/src/controllers/selectListController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/src/models/Model.php" afterPath="$PROJECT_DIR$/hw3/src/models/Model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/src/models/listModel.php" afterPath="$PROJECT_DIR$/hw3/src/models/listModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/src/models/noteModel.php" afterPath="$PROJECT_DIR$/hw3/src/models/noteModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/src/views/landingView.php" afterPath="$PROJECT_DIR$/hw3/src/views/landingView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/src/views/layouts/newListLayout.php" afterPath="$PROJECT_DIR$/hw3/src/views/layouts/newListLayout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/src/views/layouts/newNoteLayout.php" afterPath="$PROJECT_DIR$/hw3/src/views/layouts/newNoteLayout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/src/views/newListView.php" afterPath="$PROJECT_DIR$/hw3/src/views/newListView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/src/views/selectNoteView.php" afterPath="$PROJECT_DIR$/hw3/src/views/selectNoteView.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,64 +30,28 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw3/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="52" column="50" lean-forward="false" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
+            <state relative-caret-position="117">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="landingController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw3/src/controllers/landingController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="selectNoteController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw3/src/controllers/selectNoteController.php">
+      <file leaf-file-name="newListController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hw3/src/controllers/newListController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="16" column="68" lean-forward="false" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
+              <caret line="16" column="79" lean-forward="false" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="79" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selectNoteView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw3/src/views/selectNoteView.php">
+      <file leaf-file-name="selectListController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw3/src/controllers/selectListController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="noteModel.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hw3/src/models/noteModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding>
-                <marker date="1491781979096" expanded="true" signature="287:364" ph="INSERT INTO lists... " />
-                <marker date="1491781979096" expanded="true" signature="475:518" ph="SELECT name,... notes" />
-                <marker date="1491781979096" expanded="true" signature="475:519" ph="SELECT name,... notes" />
-                <marker date="1491781979096" expanded="true" signature="475:528" ph="SELECT name,... notes" />
-                <marker date="1491781979096" expanded="true" signature="824:877" ph="SELECT name,... notes" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw3/src/styles/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            <state relative-caret-position="136">
+              <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -91,28 +60,18 @@
       <file leaf-file-name="landingView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw3/src/views/landingView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+            <state relative-caret-position="323">
+              <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selectNoteLayout.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw3/src/views/layouts/selectNoteLayout.php">
+      <file leaf-file-name="newListView.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw3/src/views/newListView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newNoteLayout.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw3/src/views/layouts/newNoteLayout.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="14" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="13" selection-end-column="14" />
+            <state relative-caret-position="425">
+              <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -121,12 +80,42 @@
       <file leaf-file-name="listModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw3/src/models/listModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+            <state relative-caret-position="306">
+              <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
               <folding>
-                <marker date="1491777842120" expanded="true" signature="215:272" ph="INSERT INTO lists... " />
-                <marker date="1491777842120" expanded="true" signature="375:425" ph="SELECT name lists" />
+                <marker date="1491796109462" expanded="true" signature="215:272" ph="INSERT INTO lists... " />
+                <marker date="1491796109462" expanded="true" signature="383:441" ph="SELECT name,... lists" />
+                <marker date="1491796109462" expanded="true" signature="755:834" ph="SELECT name lists" />
+                <marker date="1491796109462" expanded="true" signature="1217:1255" ph="SELECT name lists" />
+                <marker date="1491796109462" expanded="true" signature="1217:1256" ph="SELECT paren... lists" />
+                <marker date="1491796109462" expanded="true" signature="1217:1267" ph="SELECT list_... lists" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="noteModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw3/src/models/noteModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+              <folding>
+                <marker date="1491793674346" expanded="true" signature="287:364" ph="INSERT INTO lists... " />
+                <marker date="1491793674346" expanded="true" signature="475:518" ph="SELECT name,... notes" />
+                <marker date="1491793674346" expanded="true" signature="475:519" ph="SELECT name,... notes" />
+                <marker date="1491793674346" expanded="true" signature="475:528" ph="SELECT name,... notes" />
+                <marker date="1491793674346" expanded="true" signature="838:921" ph="SELECT name,... notes" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw3/src/models/Model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -177,26 +166,28 @@
         <option value="$PROJECT_DIR$/hw3/src/views/layouts/Layout.php" />
         <option value="$PROJECT_DIR$/hw3/src/views/View.php" />
         <option value="$PROJECT_DIR$/hw3/src/views/layouts/landingLayout.php" />
-        <option value="$PROJECT_DIR$/hw3/src/controllers/landingController.php" />
-        <option value="$PROJECT_DIR$/hw3/src/models/listModel.php" />
-        <option value="$PROJECT_DIR$/hw3/src/controllers/selectListController.php" />
-        <option value="$PROJECT_DIR$/hw3/src/controllers/newListController.php" />
-        <option value="$PROJECT_DIR$/hw3/src/models/Model.php" />
         <option value="$PROJECT_DIR$/hw3/src/controllers/Controller.php" />
         <option value="$PROJECT_DIR$/hw3/src/views/layouts/newNoteView.php" />
-        <option value="$PROJECT_DIR$/hw3/src/views/newListView.php" />
         <option value="$PROJECT_DIR$/hw3/src/views/newNoteView.php" />
-        <option value="$PROJECT_DIR$/hw3/src/controllers/newNoteController.php" />
         <option value="$PROJECT_DIR$/hw3/src/views/layouts/selectLayoutView.php" />
         <option value="$PROJECT_DIR$/hw3/src/views/layouts/newNoteLayout.php" />
         <option value="$PROJECT_DIR$/hw3/src/views/layouts/newListLayout.php" />
         <option value="$PROJECT_DIR$/hw3/src/views/layouts/selectNoteView.php" />
-        <option value="$PROJECT_DIR$/hw3/src/views/landingView.php" />
-        <option value="$PROJECT_DIR$/hw3/index.php" />
         <option value="$PROJECT_DIR$/hw3/src/styles/styles.css" />
-        <option value="$PROJECT_DIR$/hw3/src/views/selectNoteView.php" />
         <option value="$PROJECT_DIR$/hw3/src/controllers/selectNoteController.php" />
+        <option value="$PROJECT_DIR$/hw3/src/views/selectNoteView.php" />
+        <option value="$PROJECT_DIR$/hw3/src/models/Model.php" />
+        <option value="$PROJECT_DIR$/hw3/src/controllers/newNoteController.php" />
+        <option value="$PROJECT_DIR$/hw3/src/controllers/landingController.php" />
         <option value="$PROJECT_DIR$/hw3/src/models/noteModel.php" />
+        <option value="$PROJECT_DIR$/hw3/src/models/listModel.php" />
+        <option value="$PROJECT_DIR$/hw3/src/views/newListView.php" />
+        <option value="$PROJECT_DIR$/hw3/src/views/layouts/selectListLayout.php" />
+        <option value="$PROJECT_DIR$/hw3/src/controllers/newListController.php" />
+        <option value="$PROJECT_DIR$/hw3/index.php" />
+        <option value="$PROJECT_DIR$/hw3/src/controllers/selectListController.php" />
+        <option value="$PROJECT_DIR$/hw3/src/views/selectListView.php" />
+        <option value="$PROJECT_DIR$/hw3/src/views/landingView.php" />
       </list>
     </option>
   </component>
@@ -502,8 +493,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.CreateDb.php">
+  <component name="RunManager" selected="PHP Script.index.php">
     <configuration default="false" name="CreateDb.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/hw3_old/src/configs/CreateDb.php">
+      <method />
+    </configuration>
+    <configuration default="false" name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/hw3/index.php">
       <method />
     </configuration>
     <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
@@ -573,12 +567,14 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="PHP Script.CreateDb.php" />
+      <item index="1" class="java.lang.String" itemvalue="PHP Script.index.php" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="PHP Script.CreateDb.php" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.index.php" />
+        <item index="1" class="java.lang.String" itemvalue="PHP Script.CreateDb.php" />
       </list>
     </recent_temporary>
   </component>
@@ -608,12 +604,12 @@
       <workItem from="1491530337547" duration="1835000" />
       <workItem from="1491588689208" duration="8004000" />
       <workItem from="1491667883336" duration="9917000" />
-      <workItem from="1491754835481" duration="20170000" />
+      <workItem from="1491754835481" duration="29226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94273000" />
+    <option name="totallyTimeSpent" value="103329000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -629,7 +625,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936775" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -647,19 +643,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Documents/CS174/Hw2a/index.php" />
-    <entry file="file://$PROJECT_DIR$/hw3_old/src/views/layouts/displayLayout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw3_old/src/configs/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -867,22 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/src/views/layouts/landingLayout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/src/models/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw3/src/controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -907,45 +879,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/src/controllers/newNoteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="51" lean-forward="true" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw3/src/views/newNoteView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding>
-            <element signature="e#609#638#0#HTML" expanded="true" />
+            <element signature="e#609#638#0#HTML" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/src/views/newListView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/src/controllers/selectListController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/src/controllers/newListController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -953,30 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/src/views/layouts/newListLayout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/src/views/layouts/newNoteLayout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="14" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="13" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/src/views/layouts/selectNoteLayout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -997,37 +913,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/src/models/listModel.php">
+    <entry file="file://$PROJECT_DIR$/hw3/src/views/layouts/newNoteLayout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding>
-            <marker date="1491777842120" expanded="true" signature="215:272" ph="INSERT INTO lists... " />
-            <marker date="1491777842120" expanded="true" signature="375:425" ph="SELECT name lists" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="52" column="50" lean-forward="false" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
+        <state relative-caret-position="221">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="13" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/src/views/landingView.php">
+    <entry file="file://$PROJECT_DIR$/hw3/src/views/selectNoteView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+        <state relative-caret-position="187">
+          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/src/controllers/landingController.php">
+    <entry file="file://$PROJECT_DIR$/hw3/src/models/Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="59" />
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/src/controllers/newNoteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
           <folding />
         </state>
       </provider>
@@ -1040,25 +953,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/src/views/selectNoteView.php">
+    <entry file="file://$PROJECT_DIR$/hw3/src/views/layouts/newListLayout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        <state relative-caret-position="34">
+          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/src/views/layouts/selectNoteLayout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/src/controllers/landingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw3/src/models/noteModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="323">
+          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
           <folding>
-            <marker date="1491781979096" expanded="true" signature="287:364" ph="INSERT INTO lists... " />
-            <marker date="1491781979096" expanded="true" signature="475:518" ph="SELECT name,... notes" />
-            <marker date="1491781979096" expanded="true" signature="475:519" ph="SELECT name,... notes" />
-            <marker date="1491781979096" expanded="true" signature="475:528" ph="SELECT name,... notes" />
-            <marker date="1491781979096" expanded="true" signature="824:877" ph="SELECT name,... notes" />
+            <marker date="1491793674346" expanded="true" signature="287:364" ph="INSERT INTO lists... " />
+            <marker date="1491793674346" expanded="true" signature="475:518" ph="SELECT name,... notes" />
+            <marker date="1491793674346" expanded="true" signature="475:519" ph="SELECT name,... notes" />
+            <marker date="1491793674346" expanded="true" signature="475:528" ph="SELECT name,... notes" />
+            <marker date="1491793674346" expanded="true" signature="838:921" ph="SELECT name,... notes" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/src/views/layouts/landingLayout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/src/models/listModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding>
+            <marker date="1491796109462" expanded="true" signature="215:272" ph="INSERT INTO lists... " />
+            <marker date="1491796109462" expanded="true" signature="383:441" ph="SELECT name,... lists" />
+            <marker date="1491796109462" expanded="true" signature="755:834" ph="SELECT name lists" />
+            <marker date="1491796109462" expanded="true" signature="1217:1255" ph="SELECT name lists" />
+            <marker date="1491796109462" expanded="true" signature="1217:1256" ph="SELECT paren... lists" />
+            <marker date="1491796109462" expanded="true" signature="1217:1267" ph="SELECT list_... lists" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/src/views/layouts/selectListLayout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/src/views/selectListView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="47" column="86" lean-forward="false" selection-start-line="47" selection-start-column="86" selection-end-line="47" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/src/controllers/selectListController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/src/views/landingView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/src/views/newListView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/src/controllers/newListController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="79" lean-forward="false" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="79" />
+          <folding />
         </state>
       </provider>
     </entry>

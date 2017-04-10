@@ -18,6 +18,6 @@ abstract class Model{
         }
     }
 
-    public abstract function insert($data);
-    public abstract function selectMultiple();
+/*    public abstract function insert($data);
+    public abstract function selectMultiple(int $parent_id);*/
 }

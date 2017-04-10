@@ -26,7 +26,7 @@ spl_autoload_register(function ($className) {
 
 function bootstrap(){
     // a = action, c = controller, m = method
-    if(!isset($_REQUEST['a'])){
+    if(!isset($_REQUEST['m']) || !isset($_REQUEST['c'])){
         $controller = new \controllers\landingController();
         $controller->index();
     }
@@ -34,19 +34,25 @@ function bootstrap(){
         if(isset($_REQUEST['c']) && $_REQUEST['c'] == "listController"){
             if(isset($_REQUEST['m']) && $_REQUEST['m'] == "newList"){
                 $controller = new \controllers\newListController();
-                $controller->index();
-                $controller->add();
+                $list_id = $controller->index();
+                if(isset($_REQUEST['currentList']) && !empty($_REQUEST['currentList'])){
+                    $controller->add($list_id);
+                }
+                else{
+                    $controller->add($list_id);
+                }
+
             }
-            /*else if(isset($_REQUEST['m']) && $_REQUEST['m'] = "selectList"){
+            else if(isset($_REQUEST['m']) && $_REQUEST['m'] == "selectList"){
                 $controller = new \controllers\selectListController();
                 $controller->index();
-            }*/
+            }
         }
-        else if(isset($_REQUEST['c']) && $_REQUEST['c'] = "noteController"){
+        else if(isset($_REQUEST['c']) && $_REQUEST['c'] == "noteController"){
             if(isset($_REQUEST['m']) && $_REQUEST['m'] == "newNote"){
                 $controller = new \controllers\newNoteController();
                 $controller->index();
-                $controller->add();
+                $controller->add(0);
             }
             else if(isset($_REQUEST['m']) && $_REQUEST['m'] == "selectNote" && isset($_REQUEST['noteName'])){
                 $controller = new \controllers\selectNoteController();

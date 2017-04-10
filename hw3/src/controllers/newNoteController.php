@@ -15,10 +15,10 @@ class newNoteController extends Controller {
             $this->view->display($data = []);
         }
     }
-    public function add(){
+    public function add(int $parent_id){
         if(isset($_REQUEST['noteName']) && $_REQUEST['noteContent']){
             $data['noteName'] = $_REQUEST['noteName'];
-            $data['parent_id'] = 0;
+            $data['parent_id'] = $parent_id;
             $data['noteContent'] = $_REQUEST['noteContent'];
             $this->model['note']->insert($data);
 

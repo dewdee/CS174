@@ -15,8 +15,8 @@ class landingController extends Controller {
             $this->model['list'] = new \models\listModel();
             $this->model['note'] = new \models\noteModel();
 
-            $data['lists'] = $this->model['list']->selectMultiple();
-            $data['notes'] = $this->model['note']->selectMultiple();
+            $data['lists'] = $this->model['list']->selectMultiple(0);
+            $data['notes'] = $this->model['note']->selectMultiple(0);
             $this->view->display($data);
         }
         else{

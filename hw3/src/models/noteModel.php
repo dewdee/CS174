@@ -23,8 +23,8 @@ class noteModel extends Model{
             return $note;
         }
     }
-    public function selectMultiple(){
-        $sql = "SELECT name, created FROM notes ORDER BY created DESC";
+    public function selectMultiple(int $parent_id){
+        $sql = "SELECT name, created FROM notes where fk_list_id = $parent_id ORDER BY created DESC";
         $notes = [];
         if($result = $this->connection->query($sql)){
             while($row = $result->fetch_row()){

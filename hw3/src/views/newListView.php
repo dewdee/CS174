@@ -14,7 +14,10 @@ class newListView extends View {
             <form method="get">
                 <input type="hidden" name="m" value="newList">
                 <input type="hidden" name="c" value="listController">
-                <input type="hidden" name="a" value="new">
+                <?php
+                    $current = isset($_REQUEST['currentList']) ? $_REQUEST['currentList'] : '';
+                ?>
+                <input type="hidden" name="currentList" value="<?=$current?>">
                 <input type="text" name="listName" placeholder="Enter a new list name" maxlength="20">
                 <input type="submit" value="Add">
             </form>
