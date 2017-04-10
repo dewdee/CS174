@@ -6,7 +6,7 @@ $connection = new mysqli($host, $username, $password, $database);
 if($connection->connect_error){
     die("Connection failed: " . $connection->connect_error);
 }
-$list_id = 3;
+$list_id = 15;
 $sql = "SELECT b.name, b.list_id FROM lists a INNER JOIN lists b ON (b.list_id=a.parent_id and a.list_id =?)";
 $stmt = $connection->stmt_init();
 if ($stmt->prepare($sql)) {

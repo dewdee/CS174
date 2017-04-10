@@ -13,12 +13,26 @@ class landingView extends View {
             <a href="index.php">Note-A-List</a>
             <?php
             if(!empty($data['path'])){
-                if(count($data['path']) == 1){
+                $count = count($data['path']);
+                if($count == 1){
                     ?>
                     / <a href="index.php?c=listController&m=selectList&previousList=&listName=<?=urlencode($curr)?>"><?php echo $data['path'][0]?></a>
                     <?php
                 }
-                else {
+                else if($count < 4){
+
+                    foreach ($data['path'] as $path) {
+                        ?>
+                        /
+                        <a href="index.php?c=listController&m=selectList&previousList=<?= urlencode($prev) ?>&listName=<?= urlencode($path) ?>"><?php echo $path?></a>
+                        <?php
+                    }
+                }
+                else if($count >= 4){
+                    for($i = 0; $i < $count - 2; $i++){
+                        array_shift($data['path']);
+                    }
+                    ?>/ .. <?php
                     foreach ($data['path'] as $path) {
                         ?>
                         /
