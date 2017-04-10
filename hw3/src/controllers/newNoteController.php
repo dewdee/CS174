@@ -13,6 +13,11 @@ class newNoteController extends Controller {
         if(!isset($this->model['note'])){
             $this->model['note'] = new \models\noteModel();
             $this->view->display($data = []);
+            $parent_id = 0;
+            if(isset($_REQUEST['previousList']) && !empty($_REQUEST['previousList'])){
+                $parent_id = $this->model['note']->getParentID($_REQUEST['previousList']);
+            }
+            return $parent_id;
         }
     }
     public function add(int $parent_id){

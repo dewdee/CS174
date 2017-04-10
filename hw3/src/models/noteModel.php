@@ -36,4 +36,12 @@ class noteModel extends Model{
 
         return $notes;
     }
+    public function getParentID(string $listName){
+        $sql = "SELECT list_id FROM lists WHERE name = '$listName'";
+        if($result = $this->connection->query($sql)){
+            $row = $result->fetch_row();
+            $parent_id = $row[0];
+            return $parent_id;
+        }
+    }
 }

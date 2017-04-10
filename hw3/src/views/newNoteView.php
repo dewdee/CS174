@@ -14,7 +14,10 @@ class newNoteView extends View {
         <form method="get">
             <input type="hidden" name="m" value="newNote">
             <input type="hidden" name="c" value="noteController">
-            <input type="hidden" name="a" value="new">
+            <?php
+            $prev = isset($_REQUEST['previousList']) ? $_REQUEST['previousList'] : '';
+            ?>
+            <input type="hidden" name="previousList" value="<?=$prev?>">
             Title:<input type="text" name="noteName" placeholder="Enter a new note name" maxlength="20">
             <br><br>
             Note<br><textarea name="noteContent" rows="30" cols="80" style="width:5in;height:2in;" rows="3"

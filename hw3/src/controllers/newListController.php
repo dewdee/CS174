@@ -14,8 +14,8 @@ class newListController extends Controller{
             $this->model['list'] = new \models\listModel();
             $this->view->display($data = []);
             $parent_id = 0;
-            if(isset($_REQUEST['currentList']) && !empty($_REQUEST['currentList'])){
-                $parent_id = $this->model['list']->getParentID($_REQUEST['currentList']);
+            if(isset($_REQUEST['previousList']) && !empty($_REQUEST['previousList'])){
+                $parent_id = $this->model['list']->getParentID($_REQUEST['previousList']);
             }
             return $parent_id;
         }

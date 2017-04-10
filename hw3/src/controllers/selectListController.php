@@ -1,6 +1,5 @@
 <?php
 
-
 namespace controllers;
 
 require_once 'Controller.php';
@@ -21,9 +20,6 @@ class selectListController extends Controller {
                 $data['notes'] = $this->model['note']->selectMultiple($parent_id);
                 $this->view->display($data);
             }
-        }
-        else{
-            echo 'already created';
         }
     }
 }
