@@ -62,7 +62,7 @@ class newController extends Controller {
                 $data['noteContent'] = $_REQUEST['noteContent'];
                 $this->model['note']->insert($data);
 
-                //redirect back to landing page, index.php
+                //redirect back to last visited list
                 if(isset($_REQUEST['currentList']) && !empty($_REQUEST['currentList'])){
                     $url = "index.php?c=listController&m=selectList&previousList=" . $_REQUEST['previousList'] . "&listName=" . $_REQUEST['currentList'];
                     header('Location:'.$url);
