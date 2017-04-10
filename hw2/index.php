@@ -4,7 +4,7 @@ Determines what activity we will perform and calls the corresponding controller
 */
 $activity = (isset($_REQUEST['a']) && in_array($_REQUEST['a'], 
 	["main", "create", "edit", "save", "delete", "read", "confirm"])) 
-	? $_REQUEST['a'] . "Controller" : "noteController";
+	? $_REQUEST['a'] . "Controller" : "mainController";
 $activity();
 /*
 getTextFiles
@@ -213,7 +213,7 @@ function editView($data){
 		<textarea name="fileContent" rows="30" cols="80" style="width:10in;height:5in;" rows="3" cols="50"><?php echo $data['content']?></textarea><br>
 		<!--<input type="hidden" name="fileContent" value="<?php //echo htmlspecialchars($data['content'])?>">-->
 		<input type="submit" value="Save">
-	</form><
+	</form>
 	<form method="get">
 		<input type="hidden" name="a" value="main">
 		<input type="submit" value="Return">
