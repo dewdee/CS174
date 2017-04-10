@@ -8,7 +8,7 @@ class newNoteLayout extends Layout {
         <html>
         <head>
             <link rel="stylesheet" type="text/css" href="src/styles/styles.css"/>
-            <title> This is a temporary title
+            <title> Note-A-List
             </title>
         </head>
         <body>

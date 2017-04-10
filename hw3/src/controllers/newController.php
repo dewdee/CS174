@@ -19,22 +19,16 @@ class newController extends Controller {
             if(!isset($this->model['list'])){
                 $this->model['list'] = new \models\listModel();
                 $this->view->display($data = []);
-                $parent_id = 0;
-                if(isset($_REQUEST['currentList']) && !empty($_REQUEST['currentList'])){
-                    $parent_id = $this->model['list']->getParentID($_REQUEST['currentList']);
-                }
-                return $parent_id;
+                $parent_id = empty($_REQUEST['currentList']) ? 0 : $this->model['list']->getParentID($_REQUEST['currentList']);
+                $this->add($parent_id, $type);
             }
         }
         else if($type == 'note'){
             if(!isset($this->model['note'])){
                 $this->model['note'] = new \models\noteModel();
                 $this->view->display($data = []);
-                $parent_id = 0;
-                if(isset($_REQUEST['currentList']) && !empty($_REQUEST['currentList'])){
-                    $parent_id = $this->model['note']->getParentID($_REQUEST['currentList']);
-                }
-                return $parent_id;
+                $parent_id = empty($_REQUEST['currentList']) ? 0 : $this->model['note']->getParentID($_REQUEST['currentList']);
+                $this->add($parent_id, $type);
             }
         }
     }

@@ -17,7 +17,14 @@ abstract class Model{
             die("Connection failed: " . $this->connection->connect_error);
         }
     }
-
-/*    public abstract function insert($data);
-    public abstract function selectMultiple(int $parent_id);*/
+    public function getParentID(string $listName){
+        $sql = "SELECT list_id FROM lists WHERE name = '$listName'";
+        if($result = $this->connection->query($sql)){
+            $row = $result->fetch_row();
+            $parent_id = $row[0];
+            return $parent_id;
+        }
+    }
+    public abstract function insert($data);
+    public abstract function selectMultiple(int $parent_id);
 }
