@@ -33,9 +33,9 @@ function bootstrap(){
     else{
         if(isset($_REQUEST['c']) && $_REQUEST['c'] == "listController"){
             if(isset($_REQUEST['m']) && $_REQUEST['m'] == "newList"){
-                $controller = new \controllers\newListController();
-                $list_id = $controller->index();
-                $controller->add($list_id);
+                $controller = new \controllers\newController('list');
+                $list_id = $controller->index('list');
+                $controller->add($list_id, 'list');
             }
             else if(isset($_REQUEST['m']) && $_REQUEST['m'] == "selectList"){
                 $controller = new \controllers\selectListController();
@@ -44,9 +44,9 @@ function bootstrap(){
         }
         else if(isset($_REQUEST['c']) && $_REQUEST['c'] == "noteController"){
             if(isset($_REQUEST['m']) && $_REQUEST['m'] == "newNote"){
-                $controller = new \controllers\newNoteController();
-                $list_id = $controller->index();
-                $controller->add($list_id);
+                $controller = new \controllers\newController('note');
+                $list_id = $controller->index('note');
+                $controller->add($list_id, 'note');
             }
             else if(isset($_REQUEST['m']) && $_REQUEST['m'] == "selectNote" && isset($_REQUEST['noteName'])){
                 $controller = new \controllers\selectNoteController();
