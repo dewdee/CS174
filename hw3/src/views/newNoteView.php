@@ -2,6 +2,7 @@
 
 namespace views;
 
+require_once 'View.php';
 
 class newNoteView extends View {
     public function render($data = []){

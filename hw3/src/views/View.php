@@ -2,7 +2,6 @@
 
 namespace views;
 
-
 abstract class View {
     public $layout;
     public $element;

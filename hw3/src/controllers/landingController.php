@@ -2,7 +2,6 @@
 
 namespace controllers;
 
-
 require_once 'Controller.php';
 
 class landingController extends Controller {
@@ -18,9 +17,6 @@ class landingController extends Controller {
             $data['lists'] = $this->model['list']->selectMultiple(0);
             $data['notes'] = $this->model['note']->selectMultiple(0);
             $this->view->display($data);
-        }
-        else{
-            echo 'already created';
         }
     }
 }

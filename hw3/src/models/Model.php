@@ -49,5 +49,6 @@ abstract class Model{
         return $path;
     }
     public abstract function insert($data);
+    public abstract function select($name);
     public abstract function selectMultiple(int $parent_id);
 }

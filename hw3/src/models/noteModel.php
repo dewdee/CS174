@@ -13,13 +13,13 @@ class noteModel extends Model{
         $sql = "INSERT INTO notes VALUES(NULL, '$noteName', '$note','$created' ,'$parent_id')";
         $this->connection->query($sql);
     }
-    public function select(string $noteName){
-        $sql = "SELECT name, note FROM notes WHERE name = '$noteName'";
+    public function select($name){
+        $sql = "SELECT name, note FROM notes WHERE name = '$name'";
         if($result = $this->connection->query($sql)){
             $row = $result->fetch_row();
-            $name = $row[0];
+            $note_name = $row[0];
             $content = $row[1];
-            $note = [$name => $content];
+            $note = [$note_name => $content];
             return $note;
         }
     }
