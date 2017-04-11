@@ -5,10 +5,12 @@ CREATE TABLE notes(
 	note VARCHAR(5000) NOT NULL,
 	created DATE,
 	fk_list_id INT(10) NOT NULL,
+	UNIQUE(name),
 	PRIMARY KEY(note_id));
 DROP TABLE IF EXISTS `lists`;
 CREATE TABLE lists(
 	list_id INT(10) UNSIGNED AUTO_INCREMENT,
 	name VARCHAR(20) NOT NULL,
 	parent_id INT(10) UNSIGNED NOT NULL,
+	UNIQUE(name),
 	PRIMARY KEY(list_id));

@@ -18,17 +18,25 @@ class newController extends Controller {
         if($type == 'list'){
             if(!isset($this->model['list'])){
                 $this->model['list'] = new \models\listModel();
-                $this->view->display($data = []);
                 $parent_id = empty($_REQUEST['currentList']) ? 0 : $this->model['list']->getParentID($_REQUEST['currentList']);
+                //get array of list paths
+                $data['path'] = $this->model['list']->getPath($parent_id);
+                $data['path'] = array_reverse($data['path']);
+                array_push($data['path'], $_REQUEST['previousList']);
                 $this->add($parent_id, $type);
+                $this->view->display($data);
             }
         }
         else if($type == 'note'){
             if(!isset($this->model['note'])){
                 $this->model['note'] = new \models\noteModel();
-                $this->view->display($data = []);
                 $parent_id = empty($_REQUEST['currentList']) ? 0 : $this->model['note']->getParentID($_REQUEST['currentList']);
+                //get array of list paths
+                $data['path'] = $this->model['note']->getPath($parent_id);
+                $data['path'] = array_reverse($data['path']);
+                array_push($data['path'], $_REQUEST['previousList']);
                 $this->add($parent_id, $type);
+                $this->view->display($data);
             }
         }
     }

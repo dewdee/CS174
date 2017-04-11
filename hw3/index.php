@@ -38,8 +38,8 @@ function bootstrap(){
 
             }
             else if(isset($_REQUEST['m']) && $_REQUEST['m'] == "selectList"){
-                $controller = new \controllers\selectListController();
-                $controller->index();
+                $controller = new \controllers\selectController('list');
+                $controller->indexList();
             }
         }
         else if(isset($_REQUEST['c']) && $_REQUEST['c'] == "noteController"){
@@ -49,9 +49,9 @@ function bootstrap(){
 
             }
             else if(isset($_REQUEST['m']) && $_REQUEST['m'] == "selectNote" && isset($_REQUEST['noteName'])){
-                $controller = new \controllers\selectNoteController();
+                $controller = new \controllers\selectController('note');
                 $noteName = $_REQUEST['noteName'];
-                $controller->index($noteName);
+                $controller->indexNote($noteName);
             }
         }
     }

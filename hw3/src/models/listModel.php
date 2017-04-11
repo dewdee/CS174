@@ -40,28 +40,4 @@ class listModel extends Model
 
         return $lists;
     }
-
-    public function getPath($list_id)
-    {
-        $path = []; //path is an array of names of folders
-        $sql = "SELECT b.name, b.list_id FROM lists a INNER JOIN lists b ON (b.list_id=a.parent_id and a.list_id =?)";
-        $stmt = $this->connection->stmt_init();
-        if ($stmt->prepare($sql)) {
-            $path =[];
-            while($list_id > 1) {
-                $stmt->bind_param("i", $list_id); //s == string, i == int, d==double
-                $stmt->execute();
-                $stmt->bind_result($name, $id);
-                if($stmt->fetch()) {
-                    array_push($path, $name);
-                    $list_id = $id;
-                }
-                else{
-                    break;
-                }
-            }
-            $stmt->close();
-        }
-        return $path;
-    }
 }

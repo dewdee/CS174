@@ -16,6 +16,7 @@ else {
     if($connection->select_db($database)){
         $sql = file_get_contents("sql.txt");
         //our sql file contains multiple queries, so use multi_query instead
+        //database attribute 'name' needs to be unique, otherwise we run into issues
         if($connection->multi_query($sql)){
             do{
                 //if we don't get any results and error is not empty
