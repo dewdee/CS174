@@ -20,7 +20,7 @@ class selectController extends Controller {
             $this->model['note'] = new \models\noteModel();
 
             if(isset($_REQUEST['listName'])){
-                $parent_id = $this->model['list']->getParentID($_REQUEST['listName']);
+                $parent_id = empty($_REQUEST['listName']) ? 0 : $this->model['list']->getParentID($_REQUEST['listName']);
                 $data['lists'] = $this->model['list']->selectMultiple($parent_id);
                 $data['notes'] = $this->model['note']->selectMultiple($parent_id);
                 //get array of list paths
@@ -37,7 +37,7 @@ class selectController extends Controller {
             $this->model['note'] = new \models\noteModel();
 
             $data['note'] = $this->model['note']->select($noteName);
-            $parent_id = $this->model['note']->getParentID($_REQUEST['previousList']);
+            $parent_id = empty($_REQUEST['listName']) ? 0 : $this->model['note']->getParentID($_REQUEST['listName']);
             //get array of list paths
             $data['path'] = $this->model['note']->getPath($parent_id);
             $data['path'] = array_reverse($data['path']);

@@ -49,7 +49,7 @@ class newController extends Controller {
 
                 //redirect back to last visited list
                 if(isset($_REQUEST['currentList']) && !empty($_REQUEST['currentList'])){
-                    $url = "index.php?c=listController&m=selectList&previousList=" . $_REQUEST['previousList'] . "&listName=" . $_REQUEST['currentList'];
+                    $url = "index.php?c=listController&m=selectList&listName=" . $_REQUEST['currentList'];
                     header('Location:'.$url);
                 }
                 else if(isset($_REQUEST['currentList']) && empty($_REQUEST['currentList'])){
@@ -66,7 +66,7 @@ class newController extends Controller {
 
                 //redirect back to last visited list
                 if(isset($_REQUEST['currentList']) && !empty($_REQUEST['currentList'])){
-                    $url = "index.php?c=listController&m=selectList&previousList=" . $_REQUEST['previousList'] . "&listName=" . $_REQUEST['currentList'];
+                    $url = "index.php?c=listController&m=selectList&listName=" . $_REQUEST['currentList'];
                     header('Location:'.$url);
                 }
                 else if(isset($_REQUEST['currentList']) && empty($_REQUEST['currentList'])){
