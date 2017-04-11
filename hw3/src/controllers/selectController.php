@@ -37,7 +37,7 @@ class selectController extends Controller {
             $this->model['note'] = new \models\noteModel();
 
             $data['note'] = $this->model['note']->select($noteName);
-            $parent_id = empty($_REQUEST['listName']) ? 0 : $this->model['note']->getParentID($_REQUEST['listName']);
+            $parent_id = empty($_REQUEST['previousList']) ? 0 : $this->model['note']->getParentID($_REQUEST['previousList']);
             //get array of list paths
             $data['path'] = $this->model['note']->getPath($parent_id);
             $data['path'] = array_reverse($data['path']);
