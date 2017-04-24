@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer Exercise</title>
+</head>
+<body>
+    <h1>We'll Send You Money!!</h1>
+    <form>
+        <label for="emailID">Email</label>
+        <input id="emailID"/>
+        <input type="button" value="Enter" onclick="display();"/>
+    </form>
+    <div id="timerID"> </div>
+    <script type="text/javascript">
+        var seconds = 15;
+        var timer = document.getElementById("timerID");
+        timer.innerHTML = seconds + " seconds left!";
+        var interval = setInterval(function(){
+            seconds -= 3;
+            timer.innerHTML = seconds + " seconds left!";
+            if(seconds <=0){
+                timer.innerHTML = "You missed the drawing!";
+                clearInterval(interval);
+            }
+        }, 3000);
+        function display(){
+            if(seconds > 0){
+                var email = document.getElementById("emailID").value;
+                if(!email){
+                    alert("Please enter your email");
+                }
+                else{
+                    clearInterval(interval);
+                    document.getElementById("timerID").innerHTML = "You won!";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
