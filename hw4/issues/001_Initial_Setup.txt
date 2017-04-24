@@ -1,0 +1,3 @@
+ISSUE: Do initial setup
+Assigned to: Michael Nguyen
+Description: Create all the folders and base classes for MVC
