@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 1</title>
+    <script type="text/javascript">
+        function book(){
+            var book = new Object();
+            book.title = document.getElementById("titleID").value;
+            book.author = document.getElementById("authorID").value;
+            book.publisher = document.getElementById("pubID").value;
+            book.year = document.getElementById("yearID").value;
+
+            alert("Title: " + book["title"] + "\nAuthor: " + book["author"] + "\nPublisher: " + book["publisher"] + "\nYear: " + book["year"]);
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="title">Title:</label> <input type="text" name="title" id="titleID" placeholder="Title" maxlength="30"> <br/><br/>
+        <label for="author">Author:</label><input type="text" name="author" id="authorID" placeholder="Author" maxlength="30"> <br/><br/>
+        <label for="publisher">Publisher:</label><input type="text" name="publisher" id="pubID" placeholder="Publisher" maxlength="30"> <br/><br/>
+        <label for="title">Year:</label><input type="text" name="year" id="yearID" placeholder="Year" maxlength="30"> <br/><br/>
+        <input type = "submit" value ="Save" onclick="return book();"/>
+    </form>
+</body>
+</html>
