@@ -1,0 +1,4 @@
+ISSUE: Create layouts
+Assigned to: Michael Nguyen
+Description: Create landing, edit, and read layout classes
+Status: Incomplete

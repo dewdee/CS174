@@ -3,6 +3,23 @@
 namespace mn\hw4;
 
 require_once 'src/configs/config.php';
+spl_autoload_register(function ($className) {
+    if(file_exists($file = ROOT.$className.'.php')){
+        require_once($file);
+    }
+    else if(file_exists($file = VIEW_PATH.$className.'.php')) {
+        require_once($file);
+    }
+    else if(file_exists($file = LAYOUT_PATH.$className.'.php')) {
+        require_once($file);
+    }
+    else if(file_exists($file = CONTROLLER_PATH.$className.'.php')) {
+        require_once($file);
+    }
+    else if(file_exists($file = MODEL_PATH.$className.'.php')) {
+        require_once($file);
+    }
+});
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -21,7 +38,8 @@ $logger->pushHandler(new FirePHPHandler());
 $logger->info('My logger is now ready');
 
 if(!isset($_REQUEST['c'])) {
-    header("Location: index.php?c=main&m=view");
+    $controller = new controllers\landingController();
+    $controller->index();
 }
 else{
     if($_REQUEST['c'] == "sheet"){

@@ -1,0 +1,4 @@
+ISSUE: Create api controller
+Assigned to: Michael Nguyen
+Description: Create api controller. Deals with XMLHttpRequest to update field in database with JSON
+Status: Incomplete
