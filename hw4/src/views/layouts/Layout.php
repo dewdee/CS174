@@ -1,14 +1,11 @@
 <?php
 
-/*
- * Layouts are used to output common header and footer HTML that might be used by several views.
- */
+namespace mn\hw4\views\layouts;
 
 abstract class Layout {
     public $view;
 
-    //notice type hinting allowed for objects
-    public function __construct(\views\View $view) {
+    public function __construct($view) {
         $this->view = $view;
     }
 

@@ -4,6 +4,8 @@ namespace mn\hw4;
 
 require_once 'src/configs/config.php';
 spl_autoload_register(function ($className) {
+    //fetch class name only, exclude namespace
+    $className = substr($className, strrpos($className, '\\') + 1);
     if(file_exists($file = ROOT.$className.'.php')){
         require_once($file);
     }
@@ -36,7 +38,6 @@ $logger->pushHandler(new FirePHPHandler());
 
 // You can now use your logger
 $logger->info('My logger is now ready');
-
 if(!isset($_REQUEST['c'])) {
     $controller = new controllers\landingController();
     $controller->index();

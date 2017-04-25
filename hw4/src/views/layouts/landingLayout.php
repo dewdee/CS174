@@ -1,5 +1,7 @@
 <?php
 
+namespace mn\hw4\views\layouts;
+
 require_once 'Layout.php';
 
 class landingLayout extends Layout{
@@ -16,8 +18,8 @@ class landingLayout extends Layout{
 
     public function renderFooter($data){
         ?>
-        </body>
-        </html>
+            </body>
+            </html>
         <?php
     }
 
