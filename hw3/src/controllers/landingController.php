@@ -7,7 +7,7 @@ require_once 'Controller.php';
 class landingController extends Controller {
     public function __construct() {
         parent::__construct();
-        $this->view = new \views\landingView("landingLayout");
+        $this->view = new \views\landingView("webLayout");
     }
     public function index(){
         if(!isset($this->model['list']) && !isset($this->model['note'])){

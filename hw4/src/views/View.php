@@ -7,8 +7,8 @@ use mn\hw4\views\layouts;
 abstract class View {
     public $layout;
 
-    public function __construct(string $layout) {
-        $this->layout = new layouts\landingLayout($this);
+    public function __construct($logger, string $layout) {
+        $this->layout = new layouts\webLayout($this);
     }
 
     public final function display($data = []) {

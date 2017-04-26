@@ -4,13 +4,14 @@ namespace mn\hw4\views\layouts;
 
 require_once 'Layout.php';
 
-class readLayout extends Layout {
+class webLayout extends Layout{
     public function renderHeader($data){
         ?>
         <html>
         <head>
             <link rel="stylesheet" type="text/css" href="src/styles/styles.css"/>
-            <title> Web Sheets : <?=$data['sheetName']?> </title>
+            <script type="text/javascript" src="src/spreadsheet.js"></script>
+            <title> Web Sheets </title>
         </head>
         <body>
         <?php
@@ -18,8 +19,9 @@ class readLayout extends Layout {
 
     public function renderFooter($data){
         ?>
-        </body>
-        </html>
+            </body>
+            </html>
         <?php
     }
+
 }

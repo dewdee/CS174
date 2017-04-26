@@ -25,21 +25,22 @@ spl_autoload_register(function ($className) {
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-use Monolog\Handler\FirePHPHandler;
+use Monolog\Formatter\LineFormatter;
 
 $loader = require 'vendor/autoload.php';
 $loader->add('AppName', __DIR__.'/../src/');
 
 // Create the logger
-$logger = new Logger('my_logger');
+$logger = new Logger('spread');
+$handler = new StreamHandler(__DIR__.'/app_data/spread.log', Logger::DEBUG);
+$formatter = new LineFormatter(null, null, true, true);
+$handler->setFormatter($formatter);
 // Now add some handlers
-$logger->pushHandler(new StreamHandler(__DIR__.'/app_data/spread.log', Logger::DEBUG));
-$logger->pushHandler(new FirePHPHandler());
+$logger->pushHandler($handler);
+// Push logger into controller
 
-// You can now use your logger
-$logger->info('My logger is now ready');
 if(!isset($_REQUEST['c'])) {
-    $controller = new controllers\landingController();
+    $controller = new controllers\landingController($logger);
     $controller->index();
 }
 else{
@@ -47,11 +48,11 @@ else{
         if(isset($_REQUEST['m']) && isset($_REQUEST['arg1'])){
             switch($_REQUEST['m']){
                 case "edit":
-                    $controller = new controllers\sheetController("edit");
+                    $controller = new controllers\sheetController($logger, "edit");
                     $controller->index();
                     break;
                 case "read":
-                    $controller = new controllers\sheetController("read");
+                    $controller = new controllers\sheetController($logger, "read");
                     $controller->index();
                     break;
 

@@ -8,14 +8,14 @@ use mn\hw4\views\editView;
 use mn\hw4\views\readView;
 
 class sheetController extends Controller {
-    public function __construct($type) {
+    public function __construct($logger, $type) {
         parent::__construct();
         switch($type){
             case "edit":
-                $this->view = new editView("editLayout");
+                $this->view = new editView($logger,"webLayout");
                 break;
             case "read":
-                $this->view = new readView("readLayout");
+                $this->view = new readView($logger, "webLayout");
                 break;
         }
     }
