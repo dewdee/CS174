@@ -11,6 +11,9 @@ class webLayout extends Layout{
         <head>
             <link rel="stylesheet" type="text/css" href="src/styles/styles.css"/>
             <script type="text/javascript" src="src/spreadsheet.js"></script>
+            <meta http-equiv='cache-control' content='no-cache'>
+            <meta http-equiv='expires' content='0'>
+            <meta http-equiv='pragma' content='no-cache'>
             <title> Web Sheets </title>
         </head>
         <body>

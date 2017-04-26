@@ -1,0 +1,4 @@
+ISSUE: Editable Cells
+Assigned to: Michael Nguyen
+Description: Add update functionality to contenteditable table
+Status: In Progress

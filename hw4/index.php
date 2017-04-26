@@ -3,6 +3,8 @@
 namespace mn\hw4;
 
 require_once 'src/configs/config.php';
+$loader = require 'vendor/autoload.php';
+$loader->add('AppName', __DIR__.'/../src/');
 spl_autoload_register(function ($className) {
     //fetch class name only, exclude namespace
     $className = substr($className, strrpos($className, '\\') + 1);
@@ -26,9 +28,6 @@ spl_autoload_register(function ($className) {
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Formatter\LineFormatter;
-
-$loader = require 'vendor/autoload.php';
-$loader->add('AppName', __DIR__.'/../src/');
 
 // Create the logger
 $logger = new Logger('spread');

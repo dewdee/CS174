@@ -98,7 +98,7 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
                         item = self.evaluateCell(item.substring(1), 0)[1];
                     }
                 }
-                table += "<td>" + item + "</td>";
+                table += "<td contenteditable='true'>" + item + "</td>";
             }
             table += "</tr>";
         }
