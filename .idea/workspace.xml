@@ -4,9 +4,7 @@
     <list default="true" id="d48a4fb5-0521-4755-840e-ed47ba172501" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/app_data/spread.log" afterPath="$PROJECT_DIR$/hw4/app_data/spread.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/issues/009_Editable_Cells.txt" afterPath="$PROJECT_DIR$/hw4/issues/009_Editable_Cells.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/src/spreadsheet.js" afterPath="$PROJECT_DIR$/hw4/src/spreadsheet.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/src/views/readView.php" afterPath="$PROJECT_DIR$/hw4/src/views/readView.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editView.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="editView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw4/src/views/editView.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
@@ -70,14 +68,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spreadsheet.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="spreadsheet.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw4/src/spreadsheet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="255" column="12" lean-forward="false" selection-start-line="255" selection-start-column="12" selection-end-line="255" selection-end-column="12" />
+            <state relative-caret-position="1146">
+              <caret line="308" column="24" lean-forward="true" selection-start-line="308" selection-start-column="24" selection-end-line="308" selection-end-column="24" />
               <folding>
-                <marker date="1493228754267" expanded="true" signature="2900:2931" ph="..." />
-                <marker date="1493228754267" expanded="true" signature="3225:3258" ph="..." />
+                <marker date="1493230311158" expanded="true" signature="3008:3039" ph="..." />
+                <marker date="1493230311158" expanded="true" signature="3333:3366" ph="..." />
               </folding>
             </state>
           </provider>
@@ -117,6 +115,7 @@
       <find>notecontroller</find>
       <find>td</find>
       <find>click</find>
+      <find>button</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -177,8 +176,8 @@
         <option value="$PROJECT_DIR$/hw4/src/views/readView.php" />
         <option value="$PROJECT_DIR$/hw4/src/test.php" />
         <option value="$PROJECT_DIR$/hw4/test.php" />
-        <option value="$PROJECT_DIR$/hw4/src/spreadsheet.js" />
         <option value="$PROJECT_DIR$/hw4/src/views/editView.php" />
+        <option value="$PROJECT_DIR$/hw4/src/spreadsheet.js" />
       </list>
     </option>
   </component>
@@ -687,15 +686,15 @@
       <workItem from="1493156883629" duration="854000" />
       <workItem from="1493167459854" duration="8077000" />
       <workItem from="1493205701104" duration="6441000" />
-      <workItem from="1493223954434" duration="3490000" />
+      <workItem from="1493223954434" duration="4950000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152459000" />
+    <option name="totallyTimeSpent" value="153919000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -977,16 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#810#829#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw4/src/controllers/sheetController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1021,14 +1010,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/src/views/landingView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw4/test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1045,22 +1026,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/src/spreadsheet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="255" column="12" lean-forward="false" selection-start-line="255" selection-start-column="12" selection-end-line="255" selection-end-column="12" />
-          <folding>
-            <marker date="1493228754267" expanded="true" signature="2900:2931" ph="..." />
-            <marker date="1493228754267" expanded="true" signature="3225:3258" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw4/src/views/editView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="85" lean-forward="false" selection-start-line="22" selection-start-column="85" selection-end-line="22" selection-end-column="103" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw4/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="e#810#829#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw4/src/views/landingView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw4/src/spreadsheet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1146">
+          <caret line="308" column="24" lean-forward="true" selection-start-line="308" selection-start-column="24" selection-end-line="308" selection-end-column="24" />
+          <folding>
+            <marker date="1493230311158" expanded="true" signature="3008:3039" ph="..." />
+            <marker date="1493230311158" expanded="true" signature="3333:3366" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

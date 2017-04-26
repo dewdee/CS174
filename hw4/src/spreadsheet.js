@@ -70,14 +70,16 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
         var add_button = "";
         var delete_button = "";
         var pre_delete_button = "";
+        var update_button = "";
         if (self.mode == 'write') {
             table += "<input id='" + self.data_id + "' type='hidden' " +
                 "name='" + self.data_name + "' value='" + JSON.stringify(
                     data) + "' />";
+            update_button = "<button>Update</button>";
             add_button = "<button>+</button>";
             pre_delete_button = "<button>-</button>";
         }
-        table += "<table border='1' ><tr><th></th>";
+        table += "<table border='1' ><tr><th>" + update_button + "</th>";
         for (var i = 0; i < width; i++) {
             table += "<th style='min-width:1in;text-align:right;'>" +
                 delete_button + self.letterRepresentation(i) + add_button +
@@ -244,7 +246,8 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
      */
     p.updateCell = function (event) {
         var type = (event.target.innerHTML == "+") ? 'add' :
-            (event.target.innerHTML == "-") ? 'delete' : 'cell';
+            (event.target.innerHTML == "-") ? 'delete' :
+                (event.target.innerHTML == "Update")  ? 'update' : 'cell';
         var target = (type == 'cell') ? event.target :
             event.target.parentElement;
         var row = target.parentElement.rowIndex - 1;
@@ -300,6 +303,9 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
             data.pop();
             data_elt = document.getElementById(self.data_id);
             data_elt.value = JSON.stringify(data);
+            self.draw();
+        }
+        else if(type == 'update'){
             self.draw();
         }
         event.stopPropagation();
