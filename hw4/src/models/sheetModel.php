@@ -16,7 +16,7 @@ class sheetModel extends Model{
         $sheetHash = reset($data);
         //if we use multi_query and have 3 queries instead we get unintended behavior
         //since it's only 3 inserts this is sufficient
-        $sql = "INSERT INTO sheet_codes VALUES('$sheetID', '$sheetHash', 'e'), ('$sheetID', '$sheetHash', 'w'), ('$sheetID', '$sheetHash', 'f');";
+        $sql = "INSERT INTO sheet_codes VALUES('$sheetID', '$sheetHash', 'e'), ('$sheetID', '$sheetHash', 'r'), ('$sheetID', '$sheetHash', 'f');";
         $this->connection->query($sql);
         return $sheetID;
     }

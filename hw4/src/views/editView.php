@@ -10,16 +10,21 @@ class editView extends View{
         $logger->info('Visited edit page');
     }
     public function render($data = []){
-        print_r($data['sheetCodes']);
-
+        $codes = array_values($data['sheetCodes']);
+        $url = [];
+        foreach($codes as $code){
+            //index.php?c=main&m=edit&arg1=8_digit_hash_e
+            $str = 'index.php?c=main&m=edit&arg1='.$code[1].$code[2];
+            array_push($url, $str);
+        }
         ?>
             <h1><a href="index.php">Web Sheets</a> : <?=$data['sheetName']?></h1>
             <label for="editURL">Edit URL:</label>
-            <input type="text" id="editURL" value="test" disabled="disabled"/><br>
+            <input type="text" id="editURL" value="<?=$url[0]?>" disabled="disabled"/><br>
             <label for="readURL">Read URL:</label>
-            <input type="text" id="readURL" value="test" disabled="disabled"/><br>
+            <input type="text" id="readURL" value="<?=$url[1]?>" disabled="disabled"/><br>
             <label for="fileURL">File URL:</label>
-            <input type="text" id="fileURL" value="test" disabled="disabled"/><br>
+            <input type="text" id="fileURL" value="<?=$url[2]?>" disabled="disabled"/><br>
             <div id="spreadsheet"></div>
             <script>
                 spreadsheet = new Spreadsheet("spreadsheet", [["", ""],["", ""]],
