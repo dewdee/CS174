@@ -1,0 +1,4 @@
+ISSUE: Create sheet controller
+Assigned to: Michael Nguyen
+Description: Create sheet model and add in all necessary queries
+Status: Complete

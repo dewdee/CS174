@@ -11,7 +11,7 @@ class editView extends View{
     }
     public function render($data = []){
         ?>
-            <h1><a href="index.php">Web Sheets : <?=$data['sheetName']?></a></h1>
+            <h1><a href="index.php">Web Sheets</a> : <?=$data['sheetName']?></h1>
             <label for="editURL">Edit URL:</label>
             <input type="text" id="editURL" value="test" disabled="disabled"/><br>
             <label for="readURL">Read URL:</label>
@@ -20,7 +20,8 @@ class editView extends View{
             <input type="text" id="fileURL" value="test" disabled="disabled"/><br>
             <div id="spreadsheet"></div>
             <script>
-                spreadsheet = new Spreadsheet("spreadsheet", [["Tom",5],["Sally", 6]], {"mode":"write"});
+                spreadsheet = new Spreadsheet("spreadsheet", [["", ""],["", ""]],
+                {"mode":"write"});
                 //editable
                 spreadsheet.draw();
             </script>

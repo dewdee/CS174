@@ -1,0 +1,4 @@
+ISSUE: Average function
+Assigned to: Michael Nguyen
+Description: Add average functionality to spreadsheet.js
+Status: Incomplete
