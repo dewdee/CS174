@@ -10,6 +10,8 @@ class editView extends View{
         $logger->info('Visited edit page');
     }
     public function render($data = []){
+        print_r($data['sheetCodes']);
+
         ?>
             <h1><a href="index.php">Web Sheets</a> : <?=$data['sheetName']?></h1>
             <label for="editURL">Edit URL:</label>

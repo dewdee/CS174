@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d48a4fb5-0521-4755-840e-ed47ba172501" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw4/src/models/sheetModel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Clickjack Test/Clickjack.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/app_data/spread.log" afterPath="$PROJECT_DIR$/hw4/app_data/spread.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/src/controllers/SheetController.php" afterPath="$PROJECT_DIR$/hw4/src/controllers/SheetController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/src/models/Model.php" afterPath="$PROJECT_DIR$/hw4/src/models/Model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/src/spreadsheet.js" afterPath="$PROJECT_DIR$/hw4/src/spreadsheet.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/src/models/sheetModel.php" afterPath="$PROJECT_DIR$/hw4/src/models/sheetModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/src/views/editView.php" afterPath="$PROJECT_DIR$/hw4/src/views/editView.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sheetController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sheetController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw4/src/controllers/sheetController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+            <state relative-caret-position="553">
+              <caret line="42" column="67" lean-forward="false" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
               <folding>
                 <element signature="e#70#99#0#PHP" expanded="true" />
               </folding>
@@ -55,21 +53,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sheetModel.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sheetModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw4/src/models/sheetModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="40" column="13" lean-forward="false" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+            <state relative-caret-position="554">
+              <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
               <folding>
-                <marker date="1493242128349" expanded="true" signature="220:278" ph="INSERT INTO notes... " />
-                <marker date="1493242128349" expanded="true" signature="590:651" ph="INSERT INTO sheet_codes... " />
-                <marker date="1493242128349" expanded="true" signature="590:717" ph="INSERT INTO sheet_codes... " />
-                <marker date="1493242128349" expanded="true" signature="653:684" ph="INSERT INTO sheet_codes... " />
-                <marker date="1493242128349" expanded="true" signature="686:717" ph="INSERT INTO sheet_codes... " />
-                <marker date="1493242128349" expanded="true" signature="843:908" ph="SELECT sheet... sheet" />
-                <marker date="1493242128349" expanded="true" signature="1286:1357" ph="SELECT sheet... sheet" />
-                <marker date="1493242128349" expanded="true" signature="1286:1358" ph="SELECT sheet... sheet_codes" />
+                <marker date="1493245321953" expanded="true" signature="220:278" ph="INSERT INTO notes... " />
+                <marker date="1493245321953" expanded="true" signature="590:651" ph="INSERT INTO sheet_codes... " />
+                <marker date="1493245321953" expanded="true" signature="590:717" ph="INSERT INTO sheet_codes... " />
+                <marker date="1493245321953" expanded="true" signature="653:684" ph="INSERT INTO sheet_codes... " />
+                <marker date="1493245321953" expanded="true" signature="686:717" ph="INSERT INTO sheet_codes... " />
+                <marker date="1493245321953" expanded="true" signature="843:908" ph="SELECT sheet... sheet" />
+                <marker date="1493245321953" expanded="true" signature="1286:1357" ph="SELECT sheet... sheet" />
+                <marker date="1493245321953" expanded="true" signature="1286:1358" ph="SELECT sheet... sheet_codes" />
+                <marker date="1493245321953" expanded="true" signature="1655:1708" ph="SELECT sheet... sheet" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Clickjack.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Clickjack Test/Clickjack.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="11" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -88,21 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateDb.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw4/src/configs/CreateDb.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="9" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="29" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="editView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw4/src/views/editView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            <state relative-caret-position="187">
+              <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -111,7 +110,7 @@
       <file leaf-file-name="spreadsheet.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw4/src/spreadsheet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5389">
+            <state relative-caret-position="637">
               <caret line="317" column="67" lean-forward="true" selection-start-line="317" selection-start-column="67" selection-end-line="317" selection-end-column="67" />
               <folding>
                 <marker date="1493232037625" expanded="true" signature="3008:3039" ph="..." />
@@ -155,8 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hw3/src/views/layouts/selectListLayout.php" />
-        <option value="$PROJECT_DIR$/hw3/src/views/selectListView.php" />
         <option value="$PROJECT_DIR$/hw3/src/controllers/newListController.php" />
         <option value="$PROJECT_DIR$/hw3/src/controllers/newNoteController.php" />
         <option value="$PROJECT_DIR$/hw2/index.php" />
@@ -201,11 +198,13 @@
         <option value="$PROJECT_DIR$/hw4/test.php" />
         <option value="$PROJECT_DIR$/hw4/src/spreadsheet.js" />
         <option value="$PROJECT_DIR$/hw4/src/models/Model.php" />
-        <option value="$PROJECT_DIR$/hw4/src/views/editView.php" />
         <option value="$PROJECT_DIR$/hw4/src/configs/CreateDb.php" />
         <option value="$PROJECT_DIR$/hw4/src/configs/test.php" />
-        <option value="$PROJECT_DIR$/hw4/src/controllers/sheetController.php" />
+        <option value="$PROJECT_DIR$/Clickjack Test/Clickjack.php" />
+        <option value="$PROJECT_DIR$/Clickjack Test/Clickjack.html" />
+        <option value="$PROJECT_DIR$/hw4/src/views/editView.php" />
         <option value="$PROJECT_DIR$/hw4/src/models/sheetModel.php" />
+        <option value="$PROJECT_DIR$/hw4/src/controllers/sheetController.php" />
       </list>
     </option>
   </component>
@@ -648,6 +647,20 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS174" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS174" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Clickjack Test" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -836,12 +849,12 @@
       <workItem from="1493223954434" duration="6810000" />
       <workItem from="1493235262367" duration="1074000" />
       <workItem from="1493236734589" duration="4691000" />
-      <workItem from="1493241439205" duration="712000" />
+      <workItem from="1493241439205" duration="2791000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162256000" />
+    <option name="totallyTimeSpent" value="164335000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -880,13 +893,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hw2/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3391">
-          <caret line="214" column="42" lean-forward="true" selection-start-line="214" selection-start-column="42" selection-end-line="214" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw3/src/configs/CreateDb.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1134,25 +1140,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/src/views/View.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/src/spreadsheet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5389">
-          <caret line="317" column="67" lean-forward="true" selection-start-line="317" selection-start-column="67" selection-end-line="317" selection-end-column="67" />
-          <folding>
-            <marker date="1493232037625" expanded="true" signature="3008:3039" ph="..." />
-            <marker date="1493232037625" expanded="true" signature="3333:3366" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw3/src/views/selectNoteView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1169,14 +1156,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/src/views/editView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw3/src/models/listModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1185,17 +1164,6 @@
             <marker date="1491879490429" expanded="true" signature="217:274" ph="INSERT INTO lists... " />
             <marker date="1491879490429" expanded="true" signature="375:429" ph="SELECT name,... lists" />
             <marker date="1491879490429" expanded="true" signature="756:835" ph="SELECT name,... lists" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="e#173#806#2#PHP" expanded="false" />
-            <element signature="e#810#829#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1228,29 +1196,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/src/controllers/sheetController.php">
+    <entry file="file://$PROJECT_DIR$/hw4/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+        <state relative-caret-position="204">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#70#99#0#PHP" expanded="true" />
+            <element signature="e#173#806#2#PHP" expanded="false" />
+            <element signature="e#810#829#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clickjack Test/Clickjack.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="11" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw4/src/views/View.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw4/src/views/editView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw4/src/spreadsheet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="317" column="67" lean-forward="true" selection-start-line="317" selection-start-column="67" selection-end-line="317" selection-end-column="67" />
+          <folding>
+            <marker date="1493232037625" expanded="true" signature="3008:3039" ph="..." />
+            <marker date="1493232037625" expanded="true" signature="3333:3366" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw4/src/models/sheetModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="40" column="13" lean-forward="false" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        <state relative-caret-position="554">
+          <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
           <folding>
-            <marker date="1493242128349" expanded="true" signature="220:278" ph="INSERT INTO notes... " />
-            <marker date="1493242128349" expanded="true" signature="590:651" ph="INSERT INTO sheet_codes... " />
-            <marker date="1493242128349" expanded="true" signature="590:717" ph="INSERT INTO sheet_codes... " />
-            <marker date="1493242128349" expanded="true" signature="653:684" ph="INSERT INTO sheet_codes... " />
-            <marker date="1493242128349" expanded="true" signature="686:717" ph="INSERT INTO sheet_codes... " />
-            <marker date="1493242128349" expanded="true" signature="843:908" ph="SELECT sheet... sheet" />
-            <marker date="1493242128349" expanded="true" signature="1286:1357" ph="SELECT sheet... sheet" />
-            <marker date="1493242128349" expanded="true" signature="1286:1358" ph="SELECT sheet... sheet_codes" />
+            <marker date="1493245321953" expanded="true" signature="220:278" ph="INSERT INTO notes... " />
+            <marker date="1493245321953" expanded="true" signature="590:651" ph="INSERT INTO sheet_codes... " />
+            <marker date="1493245321953" expanded="true" signature="590:717" ph="INSERT INTO sheet_codes... " />
+            <marker date="1493245321953" expanded="true" signature="653:684" ph="INSERT INTO sheet_codes... " />
+            <marker date="1493245321953" expanded="true" signature="686:717" ph="INSERT INTO sheet_codes... " />
+            <marker date="1493245321953" expanded="true" signature="843:908" ph="SELECT sheet... sheet" />
+            <marker date="1493245321953" expanded="true" signature="1286:1357" ph="SELECT sheet... sheet" />
+            <marker date="1493245321953" expanded="true" signature="1286:1358" ph="SELECT sheet... sheet_codes" />
+            <marker date="1493245321953" expanded="true" signature="1655:1708" ph="SELECT sheet... sheet" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw4/src/controllers/sheetController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="42" column="67" lean-forward="false" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
+          <folding>
+            <element signature="e#70#99#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -42,4 +42,14 @@ class sheetModel extends Model{
             return $sheetCodes;
         }
     }
+    public function getID($name){
+        $sql = "SELECT sheet_id FROM sheet WHERE sheet_name = '$name'";
+        if($result = $this->connection->query($sql)){
+            $row = $result->fetch_row();
+            if(!empty($row)){
+                $sheet_id = $row[0];
+                return $sheet_id;
+            }
+        }
+    }
 }

@@ -37,7 +37,12 @@ class sheetController extends Controller {
                 $id = $this->model['sheet']->insertCodes($data['sheet']);
                 //select the 3 codes to send to our view
                 $data['sheetCodes'] = $this->model['sheet']->selectCodes($id);
-                print_r($data['sheetCodes']);
+            }
+            else{
+                //use that sheet to insert into sheet_codes and return the ID we used
+                $id = $this->model['sheet']->getID($data['sheetName']);
+                //select the 3 codes to send to our view
+                $data['sheetCodes'] = $this->model['sheet']->selectCodes($id);
             }
         }
         $this->view->display($data);
