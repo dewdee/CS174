@@ -1,4 +1,4 @@
-ISSUE: Create main controller
+ISSUE: Create landing controller
 Assigned to: Michael Nguyen
-Description: Create main controller
+Description: Create landing controller. If file does not exist in database, we go to edit page. If it does, we need to read the hash code and determine whether or not to edit or read.
 Status: Incomplete

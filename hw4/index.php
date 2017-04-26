@@ -43,14 +43,16 @@ if(!isset($_REQUEST['c'])) {
     $controller->index();
 }
 else{
-    if($_REQUEST['c'] == "sheet"){
-        if(isset($_REQUEST['m'])){
+    if($_REQUEST['c'] == "main"){
+        if(isset($_REQUEST['m']) && isset($_REQUEST['arg1'])){
             switch($_REQUEST['m']){
                 case "edit":
-                    echo 'edit';
+                    $controller = new controllers\sheetController("edit");
+                    $controller->index();
                     break;
                 case "read":
-                    echo 'read';
+                    $controller = new controllers\sheetController("read");
+                    $controller->index();
                     break;
 
             }

@@ -2,9 +2,9 @@
 
 namespace mn\hw4\controllers;
 
-use mn\hw4\views\landingView;
-
 require_once 'Controller.php';
+
+use mn\hw4\views\landingView;
 
 class landingController extends Controller {
     public function __construct() {

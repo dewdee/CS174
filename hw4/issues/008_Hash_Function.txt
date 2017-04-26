@@ -1,0 +1,4 @@
+ISSUE: Create hash function
+Assigned to: Michael Nguyen
+Description: If a user enters a name, or a hash_code of type "edit" on the landing page, the user should be taken to the Edit Sheet Page. If the hash_code is for an existing spreadsheet it should be drawn and editable. If on the landing page a user enters a hash_code of type "read", they should be taken to the Read Sheet Page and the spreadsheet corresponding to that code should be displayed. If on the landing page, a user enters a hash_code of type "file", the spreadsheet should be displayed as an XML file that conforms to the edit given by spreadsheet.dtd. 
+Status: Incomplete

@@ -1,4 +1,4 @@
 ISSUE: Create sheet controller
 Assigned to: Michael Nguyen
-Description: Create sheet controller with hash function, sheet logic
+Description: Create sheet controller with sheet logic
 Status: Incomplete
