@@ -16,7 +16,7 @@ class readView extends View{
             <input type="text" id="fileURL" value="test" disabled="disabled"/><br>
             <div id="spreadsheet"></div>
             <script>
-                spreadsheet = new Spreadsheet("spreadsheet", [["Tom",5],["Sally", 6]], {"mode":"write"});
+                spreadsheet = new Spreadsheet("spreadsheet", [["Tom",5],["Sally", 6]], {"mode":"read"});
                 //editable
                 spreadsheet.draw();
             </script>

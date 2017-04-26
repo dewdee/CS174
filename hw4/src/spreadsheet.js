@@ -92,13 +92,19 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
             delete_button = pre_delete_button;
             for (var j = 0; j < width; j++) {
                 var item = "";
-                if (typeof data[i][j] == 'string') {
+                if (typeof data[i][j] == 'string' || typeof data[i][j] == 'number') {
                     item = data[i][j];
-                    if (item.charAt(0) == '=') {
+                    if (typeof item == 'string' && item.charAt(0) == '=') {
                         item = self.evaluateCell(item.substring(1), 0)[1];
                     }
                 }
-                table += "<td contenteditable='true'>" + item + "</td>";
+                // Need to check if we're reading or writing to make editable table
+                if(self.mode == 'write'){
+                    table += "<td contenteditable='true'>" + item + "</td>";
+                }
+                else{
+                    table += "<td>" + item + "</td>";
+                }
             }
             table += "</tr>";
         }
@@ -246,8 +252,8 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
         var length = data.length;
         var width = data[0].length;
         if (row >= 0 && column >= 0) {
-            var new_value = prompt(self.letterRepresentation(column) +
-                (row + 1), data[row][column]);
+            //var new_value = prompt(self.letterRepresentation(column) + (row + 1), data[row][column]);
+            var new_value = target.innerHTML;
             if (new_value != null) {
                 data[row][column] = new_value;
                 data_elt = document.getElementById(self.data_id);
