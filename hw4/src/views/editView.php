@@ -14,7 +14,7 @@ class editView extends View{
         $url = [];
         foreach($codes as $code){
             //index.php?c=main&m=edit&arg1=8_digit_hash_e
-            $str = 'index.php?c=main&m=edit&arg1='.$code[1].$code[2];
+            $str = 'index.php?c=main&m=edit&arg1='.$code[1].'_'.$code[2];
             array_push($url, $str);
         }
         ?>
