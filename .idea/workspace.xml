@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d48a4fb5-0521-4755-840e-ed47ba172501" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/src/views/editView.php" afterPath="$PROJECT_DIR$/hw4/src/views/editView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/app_data/spread.log" afterPath="$PROJECT_DIR$/hw4/app_data/spread.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/src/views/readView.php" afterPath="$PROJECT_DIR$/hw4/src/views/readView.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,16 +70,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editView.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="editView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw4/src/views/editView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+            <state relative-caret-position="306">
+              <caret line="18" column="9" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="18" selection-end-column="9" />
               <folding>
                 <marker date="1493249786834" expanded="true" signature="548:568" ph="..." />
                 <marker date="1493249786834" expanded="true" signature="1138:1185" ph="..." />
                 <marker date="1493249786834" expanded="true" signature="1138:1340" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readView.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hw4/src/views/readView.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,7 +194,6 @@
         <option value="$PROJECT_DIR$/hw4/src/views/landingView.php" />
         <option value="$PROJECT_DIR$/hw4/index.php" />
         <option value="$PROJECT_DIR$/hw4/src/views/layouts/webLayout.php" />
-        <option value="$PROJECT_DIR$/hw4/src/views/readView.php" />
         <option value="$PROJECT_DIR$/hw4/src/test.php" />
         <option value="$PROJECT_DIR$/hw4/test.php" />
         <option value="$PROJECT_DIR$/hw4/src/spreadsheet.js" />
@@ -195,6 +205,7 @@
         <option value="$PROJECT_DIR$/hw4/src/controllers/sheetController.php" />
         <option value="$PROJECT_DIR$/hw4/src/models/sheetModel.php" />
         <option value="$PROJECT_DIR$/hw4/src/views/editView.php" />
+        <option value="$PROJECT_DIR$/hw4/src/views/readView.php" />
       </list>
     </option>
   </component>
@@ -839,15 +850,15 @@
       <workItem from="1493223954434" duration="6810000" />
       <workItem from="1493235262367" duration="1074000" />
       <workItem from="1493236734589" duration="4691000" />
-      <workItem from="1493241439205" duration="5379000" />
+      <workItem from="1493241439205" duration="6998000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166923000" />
+    <option name="totallyTimeSpent" value="168542000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18070363" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1048,13 +1059,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/src/views/readView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="100" lean-forward="false" selection-start-line="18" selection-start-column="100" selection-end-line="18" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw4/src/views/layouts/Layout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1182,18 +1186,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/src/models/noteModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding>
-            <marker date="1491879509700" expanded="true" signature="287:364" ph="INSERT INTO notes... " />
-            <marker date="1491879509700" expanded="true" signature="464:513" ph="SELECT name,... notes" />
-            <marker date="1491879509700" expanded="true" signature="833:916" ph="SELECT name,... notes" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw4/src/views/View.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1252,15 +1244,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/src/models/noteModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding>
+            <marker date="1491879509700" expanded="true" signature="287:364" ph="INSERT INTO notes... " />
+            <marker date="1491879509700" expanded="true" signature="464:513" ph="SELECT name,... notes" />
+            <marker date="1491879509700" expanded="true" signature="833:916" ph="SELECT name,... notes" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hw4/src/views/editView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+        <state relative-caret-position="306">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="18" selection-end-column="9" />
           <folding>
             <marker date="1493249786834" expanded="true" signature="548:568" ph="..." />
             <marker date="1493249786834" expanded="true" signature="1138:1185" ph="..." />
             <marker date="1493249786834" expanded="true" signature="1138:1340" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw4/src/views/readView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
