@@ -26,7 +26,7 @@ class editView extends View{
                     $m = "file";
                     break;
             }
-            $str = 'index.php?c=api&m='.$m.'&arg1='.$code[1].'_'.$code[2];
+            $str = $_SERVER['SERVER_NAME'].'/cs174/hw4/index.php?c=api&m='.$m.'&arg1='.$code[1].'_'.$code[2];
             array_push($url, $str);
         }
         ?>

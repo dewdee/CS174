@@ -35,7 +35,7 @@ class apiController extends Controller {
             // If so, go directly to view
             if($this->model['code']->existsHash($data['name'])){
                 $id = $this->model['code']->getID($data['name']);
-                // Fetch sheet name
+                // Fetch sheet name to display and then get codes
                 $data['name'] = $this->model['sheet']->getName($id);
                 $data['sheetCodes'] = $this->model['code']->select($id);
             }
