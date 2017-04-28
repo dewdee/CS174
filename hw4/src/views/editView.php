@@ -13,12 +13,24 @@ class editView extends View{
         $codes = array_values($data['sheetCodes']);
         $url = [];
         foreach($codes as $code){
-            //index.php?c=main&m=edit&arg1=8_digit_hash_e
-            $str = 'index.php?c=main&m=edit&arg1='.$code[1].'_'.$code[2];
+            //index.php?c=api&m=edit&arg1=8_digit_hash_e
+            $m = "";
+            switch($code[2]){
+                case 'e':
+                    $m = "edit";
+                    break;
+                case 'r':
+                    $m = "read";
+                    break;
+                case 'f':
+                    $m = "file";
+                    break;
+            }
+            $str = 'index.php?c=api&m='.$m.'&arg1='.$code[1].'_'.$code[2];
             array_push($url, $str);
         }
         ?>
-            <h1><a href="index.php">Web Sheets</a> : <?=$data['sheetName']?></h1>
+            <h1><a href="index.php">Web Sheets</a> : <?=$data['name']?></h1>
             <label for="editURL">Edit URL:</label>
             <input type="text" id="editURL" value="<?=$url[0]?>" disabled="disabled"/><br>
             <label for="readURL">Read URL:</label>

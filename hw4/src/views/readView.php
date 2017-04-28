@@ -18,7 +18,7 @@ class readView extends View{
             array_push($url, $str);
         }
         ?>
-            <h1><a href="index.php">Web Sheets : <?=$data['sheetName']?></a></h1>
+            <h1><a href="index.php">Web Sheets : <?=$data['name']?></a></h1>
             <label for="fileURL">File URL:</label>
             <input type="text" id="fileURL" value="test" disabled="disabled"/><br>
             <div id="spreadsheet"></div>

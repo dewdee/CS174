@@ -24,4 +24,23 @@ class codesModel extends Model {
             return $sheetCodes;
         }
     }
+    public function getID($hash){
+        $sql = "SELECT sheet_id FROM sheet_codes WHERE hash_code = '$hash'";
+        if($result = $this->connection->query($sql)){
+            $row = $result->fetch_row();
+            if(!empty($row)){
+                $sheet_id = $row[0];
+                return $sheet_id;
+            }
+        }
+    }
+    public function existsHash($hash){
+        $sql = "SELECT hash_code FROM sheet_codes WHERE hash_code = '$hash'";
+        if($result = $this->connection->query($sql)){
+            $row = $result->fetch_row();
+            if(!empty($row)){
+                return true;
+            }
+        }
+    }
 }
