@@ -2,4 +2,7 @@
     "require": {
         "monolog/monolog": "^1.22"
     }
+	"autoload": {
+		"psr-4": { "mn\\hw4\\":"src\\" }
+  }
 }

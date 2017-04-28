@@ -39,23 +39,31 @@ $logger->pushHandler($handler);
 // Push logger into controller
 
 if(!isset($_REQUEST['c'])) {
-    $controller = new controllers\landingController($logger);
-    $controller->index();
+    header("Location: index.php?c=main&m=view");
 }
 else{
-    if($_REQUEST['c'] == "main"){
-        if(isset($_REQUEST['m']) && isset($_REQUEST['arg1'])){
-            switch($_REQUEST['m']){
-                case "edit":
-                    $controller = new controllers\sheetController($logger, "edit");
+    switch($_REQUEST['c']){
+        case "main":
+            if(isset($_REQUEST['m']) && isset($_REQUEST['arg1'])){
+                if($_REQUEST['m'] == "view"){
+                    $controller = new controllers\mainController($logger);
                     $controller->index();
-                    break;
-                case "read":
-                    $controller = new controllers\sheetController($logger, "read");
-                    $controller->index();
-                    break;
-
+                }
             }
-        }
+            break;
+        case "api":
+            if(isset($_REQUEST['m']) && isset($_REQUEST['arg1'])){
+                switch($_REQUEST['m']){
+                    case "edit":
+                        $controller = new controllers\apiController($logger, "edit");
+                        $controller->index();
+                        break;
+                    case "read":
+                        $controller = new controllers\apiController($logger, "read");
+                        $controller->index();
+                        break;
+                }
+            }
+            break;
     }
 }

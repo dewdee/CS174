@@ -6,7 +6,7 @@ require_once 'Controller.php';
 
 use mn\hw4\views\landingView;
 
-class landingController extends Controller {
+class mainController extends Controller {
     public function __construct($logger) {
         parent::__construct();
         $this->view = new landingView($logger,"webLayout");
