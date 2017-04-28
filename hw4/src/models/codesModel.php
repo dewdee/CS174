@@ -6,13 +6,17 @@ require_once 'Model.php';
 
 class codesModel extends Model {
     public function insert($data){
-        $sheetID = key($data);
-        $sheetHash = reset($data);
-        //if we use multi_query and have 3 queries instead we get unintended behavior
+        $sheetName = $data['name'];
+        $id = $data['id'];
+        $hashes = [];
+        $hashes[0] = substr(hash("md5", $sheetName.'_e'), 0, 8);
+        $hashes[1] = substr(hash("md5", $sheetName.'_r'), 0, 8);
+        $hashes[2] = substr(hash("md5", $sheetName.'_f'), 0, 8);
+        //if we use multi_query and have 3 queries we get unintended behavior
         //since it's only 3 inserts this is sufficient
-        $sql = "INSERT INTO sheet_codes VALUES('$sheetID', '$sheetHash', 'e'), ('$sheetID', '$sheetHash', 'r'), ('$sheetID', '$sheetHash', 'f');";
+        $sql = "INSERT INTO sheet_codes VALUES('$id', '$hashes[0]', 'e'), ('$id', '$hashes[1]', 'r'), ('$id', '$hashes[2]', 
+        'f');";
         $this->connection->query($sql);
-        return $sheetID;
     }
     public function select($id){
         $sql = "SELECT sheet_id, hash_code, code_type FROM sheet_codes where sheet_id = $id";

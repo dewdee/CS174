@@ -7,19 +7,17 @@ require_once 'Model.php';
 class sheetModel extends Model{
     public function insert($data){
         $sheetName = $data["name"];
-        $sheetHash = $data['hash'];
+        $sheetHash = "temp";
         $sql = "INSERT INTO sheet VALUES(NULL, '$sheetName', '$sheetHash')";
         $this->connection->query($sql);
     }
     public function select($name){
-        $sql = "SELECT sheet_id, sheet_data FROM sheet WHERE sheet_name = '$name'";
+        $sql = "SELECT sheet_id FROM sheet WHERE sheet_name = '$name'";
         if($result = $this->connection->query($sql)){
             $row = $result->fetch_row();
             if(!empty($row)){
                 $sheet_id = $row[0];
-                $sheet_data = $row[1];
-                $result = [$sheet_id => $sheet_data];
-                return $result;
+                return $sheet_id;
             }
         }
     }
