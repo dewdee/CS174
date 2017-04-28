@@ -14,7 +14,7 @@ class landingView extends View {
         ?>
             <h1><a href="index.php">Web Sheets</a></h1>
             <form method="get" id="formID">
-                <input type="hidden" name="c" value="main">
+                <input type="hidden" name="c" value="api">
                 <input type="hidden" name="m" value="edit">
                 <input type="text" name = "arg1" id="sheetID" placeholder="New sheet name or code" maxlength="30"/>
                 <input type="submit" value="Go" onclick="return verify();"/>
