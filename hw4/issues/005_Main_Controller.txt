@@ -1,4 +1,4 @@
 ISSUE: Create landing controller
 Assigned to: Michael Nguyen
-Description: Create landing controller. If file does not exist in database, we go to edit page. If it does, we need to read the hash code and determine whether or not to edit or read.
-Status: Incomplete
+Description: Create landing controller. Creates the layout for entering in a file name or hash code.
+Status: Complete

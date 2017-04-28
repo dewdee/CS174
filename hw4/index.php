@@ -3,8 +3,7 @@
 namespace mn\hw4;
 
 require_once 'src/configs/config.php';
-$loader = require 'vendor/autoload.php';
-$loader->add('mn\hw4', __DIR__.'/../src/');
+require_once __DIR__ . '/vendor/autoload.php';
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -14,10 +13,10 @@ use Monolog\Formatter\LineFormatter;
 $logger = new Logger('spread');
 $handler = new StreamHandler(__DIR__.'/app_data/spread.log', Logger::DEBUG);
 $formatter = new LineFormatter(null, null, true, true);
+// Set the format for the handle
 $handler->setFormatter($formatter);
-// Now add some handlers
-$logger->pushHandler($handler);
-// Push logger into controller
+// Now add the handler
+$logger->pushHandler($handler); // Push logger into controller
 
 if(!isset($_REQUEST['c'])) {
     header("Location: index.php?c=main&m=view");

@@ -1,4 +1,0 @@
-ISSUE: Create sheet controller
-Assigned to: Michael Nguyen
-Description: Create sheet controller with sheet logic
-Status: In progress
