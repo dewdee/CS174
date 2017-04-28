@@ -8,7 +8,7 @@ class selectController extends Controller {
     public function __construct(string $type) {
         parent::__construct();
         if($type == 'list'){
-            $this->view = new \views\landingView("webLayout");
+            $this->view = new \views\landingView("landingLayout");
         }
         else if($type == 'note'){
             $this->view = new \views\selectNoteView("selectNoteLayout");
