@@ -1,4 +1,12 @@
 {
+	"name": "mn4/hw4",
+    "description": "Web sheets application that lets users create and share spreadsheets on the web.",
+    "authors": [
+        {
+            "name": "Michael Nguyen",
+            "email": "michael.t.nguyen@sjsu.edu"
+        }
+    ],
     "require": {
         "monolog/monolog": "^1.22"
     },

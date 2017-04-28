@@ -22,28 +22,24 @@ if(!isset($_REQUEST['c'])) {
     header("Location: index.php?c=main&m=view");
 }
 else{
-    switch($_REQUEST['c']){
-        case "main":
-            if(isset($_REQUEST['m'])){
-                if($_REQUEST['m'] == "view"){
-                    $controller = new controllers\mainController($logger);
-                    $controller->index();
-                }
+    if($_REQUEST['c'] == 'main') {
+        if (isset($_REQUEST['m'])) {
+            if ($_REQUEST['m'] == "view") {
+                $controller = new controllers\mainController($logger);
+                $controller->index();
             }
-            break;
-        case "api":
-            if(isset($_REQUEST['m']) && isset($_REQUEST['arg1'])){
-                switch($_REQUEST['m']){
-                    case "edit":
-                        $controller = new controllers\apiController($logger, "edit");
-                        $controller->index();
-                        break;
-                    case "read":
-                        $controller = new controllers\apiController($logger, "read");
-                        $controller->index();
-                        break;
-                }
+        }
+    }
+    else if($_REQUEST['c'] == 'api') {
+        if(isset($_REQUEST['m']) && isset($_REQUEST['arg1'])) {
+            if($_REQUEST['m'] == 'edit') {
+                $controller = new controllers\apiController($logger, "edit");
+                $controller->index();
             }
-            break;
+            else if($_REQUEST['m'] == 'read') {
+                $controller = new controllers\apiController($logger, "read");
+                $controller->index();
+            }
+        }
     }
 }

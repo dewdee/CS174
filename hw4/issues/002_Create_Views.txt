@@ -1,4 +1,4 @@
 ISSUE: Create views
 Assigned to: Michael Nguyen
 Description: Create landing, edit, and read view classes
-Status: Incomplete
+Status: In progress, read view still needs work

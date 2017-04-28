@@ -1,4 +1,4 @@
 ISSUE: Search Function bug
 Assigned to: Michael Nguyen
 Description: Searching with a hashcode and code type does not recognize it as an entry in the database.
-Status: In progress
+Status: Fixed

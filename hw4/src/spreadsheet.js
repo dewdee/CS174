@@ -59,27 +59,26 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
             this[property_key] = property_defaults[property_key];
         }
     }
+    var request = new XMLHttpRequest();
     /**
      * Main function used to draw the spreadsheet with the container tag
      */
     p.draw = function () {
         //used to draw a csv based on spreadsheet data
-        var table = "<div style='" + self.table_style + "'>";
+        var table = "<div id = 'table' style='" + self.table_style + "'>";
         var length = data.length;
         var width = data[0].length;
         var add_button = "";
         var delete_button = "";
         var pre_delete_button = "";
-        var update_button = "";
         if (self.mode == 'write') {
             table += "<input id='" + self.data_id + "' type='hidden' " +
                 "name='" + self.data_name + "' value='" + JSON.stringify(
                     data) + "' />";
-            update_button = "<button>Update</button>";
             add_button = "<button>+</button>";
             pre_delete_button = "<button>-</button>";
         }
-        table += "<table border='1' ><tr><th>" + update_button + "</th>";
+        table += "<table border='1' ><tr><th>" + "</th>";
         for (var i = 0; i < width; i++) {
             table += "<th style='min-width:1in;text-align:right;'>" +
                 delete_button + self.letterRepresentation(i) + add_button +
@@ -249,7 +248,7 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
      */
     p.updateCell = function (event) {
         var type = (event.target.innerHTML == "+") ? 'add' :
-            (event.target.innerHTML == "-") ? 'delete' :
+                (event.target.innerHTML == "-") ? 'delete' :
                 (event.target.innerHTML == "Update")  ? 'update' : 'cell';
         var target = (type == 'cell') ? event.target :
             event.target.parentElement;
@@ -308,13 +307,27 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
             data_elt.value = JSON.stringify(data);
             self.draw();
         }
-        else if(type == 'update'){
-            self.draw();
-        }
+        /*if(request){
+            jsonData = JSON.stringify(data, "editView.php", true);
+            request.onreadystatechange = function(){
+
+            };
+            request.send(null);
+            request.open("POST");
+        }*/
         event.stopPropagation();
         event.preventDefault();
     }
     if (this.mode == 'write') {
         container.addEventListener("click", self.updateCell, true);
+        container.addEventListener("keypress", function(event){
+            var key = event.which || event.keyCode;
+            if(key === 13){
+                // Default behavior for contenteditable td is line break, so disable that
+                event.preventDefault();
+                //Update the cell
+                self.updateCell(event);
+            }
+        }, true);
     }
 }

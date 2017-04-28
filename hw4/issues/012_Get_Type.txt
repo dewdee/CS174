@@ -1,4 +1,4 @@
 ISSUE: Get Type method
 Assigned to: Michael Nguyen
 Description: Sheet model needs to be able to get the type of the file to process view
-Status: In progress
+Status: Completed
