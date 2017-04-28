@@ -28,9 +28,8 @@ class apiController extends Controller {
 
             // ** NEED TO SANITIZE **
             $data['name'] = $_REQUEST['arg1'];
-            // $data['hash'] = substr(hash("md5", $data['name']), 0, 8);
             // First check if input is hash and exists inside our database
-            // If so, go directly to view
+            // If so, check what type of code it is and select appropriate view.
             if($this->model['code']->existsHash($data['name'])){
                 $id = $this->model['code']->getID($data['name']);
                 // Fetch sheet name to display and then get codes
@@ -58,9 +57,7 @@ class apiController extends Controller {
                     $data['sheetCodes'] = $this->model['code']->select($id);
                 }
             }
-
-
+            $this->view->display($data);
         }
-        $this->view->display($data);
     }
 }
