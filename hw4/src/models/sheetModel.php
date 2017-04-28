@@ -6,7 +6,7 @@ require_once 'Model.php';
 
 class sheetModel extends Model{
     public function insert($data){
-        $sheetName = $data["sheetName"];
+        $sheetName = $data["name"];
         $sheetHash = $data['hash'];
         $sql = "INSERT INTO sheet VALUES(NULL, '$sheetName', '$sheetHash')";
         $this->connection->query($sql);
@@ -20,6 +20,16 @@ class sheetModel extends Model{
                 $sheet_data = $row[1];
                 $result = [$sheet_id => $sheet_data];
                 return $result;
+            }
+        }
+    }
+    public function getName($id){
+        $sql = "SELECT sheet_name FROM sheet WHERE sheet_id = '$id'";
+        if($result = $this->connection->query($sql)){
+            $row = $result->fetch_row();
+            if(!empty($row)){
+                $name = $row[0];
+                return $name;
             }
         }
     }
