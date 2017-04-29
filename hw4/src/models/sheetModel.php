@@ -34,7 +34,7 @@ class sheetModel extends Model{
     public function updateData($data){
         $sheetID = $data["id"];
         $sheetData = $data['sheetData'];
-        $sql = "UPDATE sheet SET sheet_data = '$sheetID' WHERE sheet_id = '$sheetData'";
+        $sql = "UPDATE sheet SET sheet_data = '$sheetData' WHERE sheet_id = '$sheetID'";
         $this->connection->query($sql);
     }
     public function getName($id){

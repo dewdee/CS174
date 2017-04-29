@@ -26,8 +26,7 @@ class apiController extends Controller {
             $this->model['sheet'] = new sheetModel();
             $this->model['code'] = new codesModel();
 
-            // ** NEED TO SANITIZE **
-            $data['name'] = $_REQUEST['arg1'];
+            $data['name'] = empty($_REQUEST['arg1']) ? '' : $_REQUEST['arg1'];
             // First check if input is hash and exists inside our database
             // If so, check what type of code it is and select appropriate view.
             if($this->model['code']->existsHash($data['name'])){
@@ -57,6 +56,11 @@ class apiController extends Controller {
                     //select the 3 codes to send to our view
                     $data['sheetCodes'] = $this->model['code']->select($id);
                 }
+            }
+            if(isset($_POST['data'])){
+                $data['sheetData'] = $_POST['data'];
+                $data['id'] = $this->model['sheet']->select($data['name']);
+                $this->model['sheet']->updateData($data);
             }
             $this->view->display($data);
         }

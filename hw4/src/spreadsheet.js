@@ -314,19 +314,18 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
     container.onchange = function(){
         if(request){
             jsonData = JSON.stringify(data);
-
+            url = document.URL + "&data=" + jsonData;
+            request.open("POST", url, true);
             request.onreadystatechange = function() {
                 if (request.readyState == 4 && request.status == 200) {
                     container.value = request.responseText;
+                    console.log(jsonData);
                 }
             };
-            param = "&data=" + jsonData;
-            request.open("POST", document.URL, true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            request.send(param);
+            request.send(url);
         }
     }
-
 
     if (this.mode == 'write') {
         container.addEventListener("click", self.updateCell, true);

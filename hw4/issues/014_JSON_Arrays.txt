@@ -1,4 +1,4 @@
 ISSUE: Store spreadsheets as JSON Array
 Assigned to: Michael Nguyen
 Description: Spreadsheets should be stored as JSON encoded arrays
-Status: In progress
+Status: Complete
