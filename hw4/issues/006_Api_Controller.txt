@@ -1,4 +1,4 @@
 ISSUE: Create api controller
 Assigned to: Michael Nguyen
 Description: Create api controller. Handles with sheet and codes models. If file does not exist in database, we go to edit page. If it does, we need to read the hash code and determine whether or not to edit or read. Deals with XMLHttpRequest to update field in database with JSON
-Status: In progress
+Status: Complete

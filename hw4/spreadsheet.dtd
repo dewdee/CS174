@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE spreadsheet SYSTEM "spreadsheet.dtd" >
-<spreadsheet>
-
-</spreadsheet>
+<!ELEMENT row  (column)>
+<!ELEMENT column (data) >
+<!ELEMENT data (#PCDATA)>
