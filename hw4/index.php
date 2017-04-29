@@ -34,11 +34,11 @@ else{
         if(isset($_REQUEST['m']) && isset($_REQUEST['arg1'])) {
             if($_REQUEST['m'] == 'edit') {
                 $controller = new controllers\apiController($logger, "edit");
-                $controller->index();
+                $controller->index("edit");
             }
             else if($_REQUEST['m'] == 'read') {
                 $controller = new controllers\apiController($logger, "read");
-                $controller->index();
+                $controller->index("read");
             }
         }
     }

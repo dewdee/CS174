@@ -13,7 +13,7 @@ class readView extends View{
         $codes = array_values($data['sheetCodes']);
         $url = $_SERVER['SERVER_NAME'].'/cs174/hw4/index.php?c=api&m=file&arg1=';
         $url .= $codes[2][1]; //From our code list, file code is 3rd and hash code is index 1
-        $spreadsheet = [["", ""],["", ""]];
+        $spreadsheet = $data['sheetData'];
         ?>
             <h1><a href="index.php">Web Sheets : <?=$data['name']?></a></h1>
             <label for="fileURL">File URL:</label>

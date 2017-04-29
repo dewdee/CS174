@@ -31,6 +31,16 @@ class sheetModel extends Model{
             }
         }
     }
+    public function selectDataID($id){
+        $sql = "SELECT sheet_data FROM sheet WHERE sheet_id = '$id'";
+        if($result = $this->connection->query($sql)){
+            $row = $result->fetch_row();
+            if(!empty($row)){
+                $sheet_data = $row[0];
+                return $sheet_data;
+            }
+        }
+    }
     public function updateData($data){
         $sheetID = $data["id"];
         $sheetData = $data['sheetData'];

@@ -323,7 +323,6 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
             request.send(url);
         }
     }
-
     if (this.mode == 'write') {
         container.addEventListener("click", self.updateCell, true);
         container.addEventListener("keypress", function(event){
