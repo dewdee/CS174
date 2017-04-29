@@ -59,9 +59,6 @@ class apiController extends Controller {
                 }
             }
             $this->view->display($data);
-            if(isset($_POST)){
-                print_r($_POST);
-            }
         }
     }
 }

@@ -317,14 +317,13 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
 
             request.onreadystatechange = function() {
                 if (request.readyState == 4 && request.status == 200) {
-                    //document.getElementById("dataID").value = jsonData;
                     container.value = request.responseText;
                 }
             };
+            param = "&data=" + jsonData;
             request.open("POST", document.URL, true);
-            console.log(request.responseURL);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            request.send(jsonData);
+            request.send(param);
         }
     }
 

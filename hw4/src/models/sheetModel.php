@@ -7,8 +7,8 @@ require_once 'Model.php';
 class sheetModel extends Model{
     public function insert($data){
         $sheetName = $data["name"];
-        $sheetHash = $data['sheetData'];
-        $sql = "INSERT INTO sheet VALUES(NULL, '$sheetName', '$sheetHash')";
+        $sheetData = $data['sheetData'];
+        $sql = "INSERT INTO sheet VALUES(NULL, '$sheetName', '$sheetData')";
         $this->connection->query($sql);
     }
     public function select($name){
@@ -30,6 +30,12 @@ class sheetModel extends Model{
                 return $sheet_id;
             }
         }
+    }
+    public function updateData($data){
+        $sheetID = $data["id"];
+        $sheetData = $data['sheetData'];
+        $sql = "UPDATE sheet SET sheet_data = '$sheetID' WHERE sheet_id = '$sheetData'";
+        $this->connection->query($sql);
     }
     public function getName($id){
         $sql = "SELECT sheet_name FROM sheet WHERE sheet_id = '$id'";

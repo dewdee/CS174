@@ -45,6 +45,6 @@ class editView extends View{
                 spreadsheet.draw();
             </script>
         <?php
-
+        print_r($_REQUEST);
     }
 }
