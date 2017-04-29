@@ -307,17 +307,28 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
             data_elt.value = JSON.stringify(data);
             self.draw();
         }
-        /*if(request){
-            jsonData = JSON.stringify(data, "editView.php", true);
-            request.onreadystatechange = function(){
 
-            };
-            request.send(null);
-            request.open("POST");
-        }*/
         event.stopPropagation();
         event.preventDefault();
     }
+    container.onchange = function(){
+        if(request){
+            jsonData = JSON.stringify(data);
+
+            request.onreadystatechange = function() {
+                if (request.readyState == 4 && request.status == 200) {
+                    //document.getElementById("dataID").value = jsonData;
+                    container.value = request.responseText;
+                }
+            };
+            request.open("POST", document.URL, true);
+            console.log(request.responseURL);
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            request.send(jsonData);
+        }
+    }
+
+
     if (this.mode == 'write') {
         container.addEventListener("click", self.updateCell, true);
         container.addEventListener("keypress", function(event){
@@ -327,6 +338,8 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
                 event.preventDefault();
                 //Update the cell
                 self.updateCell(event);
+                self.draw();
+                container.onchange();
             }
         }, true);
     }

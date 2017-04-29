@@ -12,6 +12,7 @@ class editView extends View{
     public function render($data = []){
         $codes = array_values($data['sheetCodes']);
         $url = [];
+        $spreadsheet = $data['sheetData'];
         foreach($codes as $code){
             //index.php?c=api&m=edit&arg1=8_digit_hash_e
             $m = "";
@@ -37,11 +38,13 @@ class editView extends View{
             <input type="text" id="readURL" value="<?=$url[1]?>" disabled="disabled"/><br/>
             <label for="fileURL">File URL:</label>
             <input type="text" id="fileURL" value="<?=$url[2]?>" disabled="disabled"/><br/>
+
             <div id="spreadsheet"></div>
             <script>
-                spreadsheet = new Spreadsheet("spreadsheet", [["", ""],["", ""]], {"mode":"write"});
+                spreadsheet = new Spreadsheet("spreadsheet", <?php echo json_encode($spreadsheet)?>, {"mode":"write"});
                 spreadsheet.draw();
             </script>
         <?php
+
     }
 }
