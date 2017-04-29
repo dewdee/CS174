@@ -134,7 +134,7 @@ function Spreadsheet(spreadsheet_id, supplied_data) {
         }
         location = self.skipWhitespace(cell_expression, location);
         out[0] = location;
-        else if (cell_expression.charAt(location) == "(") {
+        if (cell_expression.charAt(location) == "(") {
             left_out = self.evaluateCell(cell_expression, location + 1);
             if (!['+', '-', '*', '/'].includes(
                     cell_expression.charAt(left_out[0])) ||
