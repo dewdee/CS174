@@ -21,7 +21,7 @@ connection.query('CREATE DATABASE IF NOT EXISTS hw5_mn',
 connection.query('USE hw5_mn', function(error, results, fields) {
     if (error) throw error;
 });
-connection.query('CREATE TABLE IF NOT EXISTS USER(ID INTEGER, EMAIL TEXT, LAST_CHECK_IN TIMESTAMP, LAST_EMAIL_SENT TIMESTAMP, NOTIFY_LIST TEXT, MESSAGE TEXT)',
+connection.query('CREATE TABLE IF NOT EXISTS USER(ID INTEGER AUTO_INCREMENTING, EMAIL TEXT, LAST_CHECK_IN TIMESTAMP, LAST_EMAIL_SENT TIMESTAMP, NOTIFY_LIST TEXT, MESSAGE TEXT)',
     function(error, results, fields) {
         if (error) throw error;
     }
