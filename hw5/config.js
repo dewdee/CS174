@@ -8,6 +8,14 @@ email_job_frequency, which controls how often the callback to send out a batch o
 var config = {
     "check_in_frequency": 5000,
     "notify_delay": 5000,
-    "email_job_frequency": 5
+    "email_job_frequency": 5,
+    "SECRET_KEY": "sk_test_kUModSZHTxes6aCJlQjA8jTV",
+    "PUBLISHABLE_KEY": "pk_test_LXsVjQmkeQlbv5lSfZPHbYSi",
+    "CHARGE_URL": "https://api.stripe.com/v1/charges",
+    "CHARGE_CURRENCY": "usd",
+    "CHARGE_DESCRIPTION": "Buyer sees this on their statement",
+    "CHARGE_USERAGENT": "CreditCardTester",
+    "TIMEOUT": 20
+
 };
 module.exports = config;

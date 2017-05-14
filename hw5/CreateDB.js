@@ -10,7 +10,6 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'password'
-        // could also add a database property
 });
 connection.connect();
 connection.query('CREATE DATABASE IF NOT EXISTS hw5_mn',

@@ -32,18 +32,46 @@
             </select>
             <select id="exp-year" data-stripe='exp-year' name="exp-year">
                 <option>Year</option>
-                <option>2017</option>
                 <option>2018</option>
                 <option>2019</option>
                 <option>2020</option>
                 <option>2021</option>
                 <option>2022</option>
+                <option>2023</option>
+                <option>2024</option>
+                <option>2025</option>
+                <option>2026</option>
             </select>
         </p>
         <p>Your card will be charged when you click the button below. A link will be mailed to you periodically that allows you to specify a message and who to send it to if you fail to check in</p>
         <p><input type="submit" id="purchase" name="Purchase" value="Buy Peace-of-Mind"></p>
     </form>
+    <script>
+        function elt(id) {
+            return document.getElementById(id);
+        }
+        elt('purchase').onclick = function(event) {
+            var purchase_form = elt('purchase-form');
+            elt('purchase').disabled = true; // prevent additional clicks
+            Stripe.card.createToken(purchase_form, tokenResponseHandler);
+            event.preventDefault(); //prevent form submitting till get all clear
+        }
 
+        function tokenResponseHandler(status, response) {
+            var purchase_form = elt('purchase-form');
+            if (response.error) {
+                alert(response.error.message);
+                elt('purchase').disabled = false;
+            } else {
+                elt('credit-token').value = response.id;
+                purchase_form.submit();
+            }
+        }
+    </script>
+    <script src="https://js.stripe.com/v2/"></script>
+    <script>
+        Stripe.setPublishableKey('<%=PUBLISHABLE_KEY %>');
+    </script>
 </body>
 
 </html>
