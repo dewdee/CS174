@@ -8,8 +8,6 @@ email_job_frequency, which controls how often the callback to send out a batch o
 var config = {
     "check_in_frequency": 5000,
     "notify_delay": 5000,
-    "email_job_frequency": 5,
-    "foo": "foo",
-    "goo": "goo"
+    "email_job_frequency": 5
 };
 module.exports = config;
