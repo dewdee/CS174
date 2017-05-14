@@ -12,7 +12,6 @@ var body_parser = require('body-parser'); //to handle posted data
 var express = require('express');
 //const nodemailer = require('nodemailer');
 var request = require('request');
-connection.connect();
 
 var path = require('path'); // for directory paths
 var config = require(path.join(__dirname, 'config'));
@@ -22,12 +21,10 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'password'
+    password: 'password',
+    database: 'hw5_mn'
 });
 connection.connect();
-connection.query('USE hw5_mn', function(error, results, fields) {
-    if (error) throw error;
-});
 
 var app = express();
 app.use(body_parser.urlencoded({ extended: true }));
@@ -63,7 +60,7 @@ app.post('/charge', function(req, res) {
             },
             auth: {
                 'user': config.SECRET_KEY,
-                'pass': 'z!4kj@u#H'
+                'pass': ''
             }
         },
         function(err, http_response, body) {

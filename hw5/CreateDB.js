@@ -4,8 +4,8 @@ The database has a table USER(ID, EMAIL, LAST_CHECK_IN, LAST_EMAIL_SENT, NOTIFY_
 LAST_CHECK_IN, LAST_EMAIL_SENT are Unix timestamps which are initially 0.
 */
 
-var mysql = require('mysql')
-    // set-up and connect
+var mysql = require('mysql');
+// set-up and connect
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
