@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Not-Dead-Yet...</title>
+</head>
+
+<body>
+    <h1><a href="">Not-Dead-Yet...</a></h1>
+    <h1>...But time to check-in: </h1>
+    <h1>email</h1>
+
+    <h3>Your last check-in was: </h3>
+
+    <form id="checkin-form" method="post" action="/checkin">
+        <input type="hidden" id="credit-token" name="credit_token" value="" />
+        <p><label for="email">Current Email: </label><input type="text" id="email" placeholder="Enter in email" /></p>
+        <p><label for="emailList">Let-Know List: </label><input type="text" id="email" placeholder="Enter in email" /></p>
+        <p><label for="message">Message</label></p>
+        <textarea rows="10" cols="50">Current message that would be sent if you don't check-in</textarea>
+        <p><input type="submit" id="checkin" name="Checkin" value="Check-in"></p>
+    </form>
+
+</body>
+
+</html>
