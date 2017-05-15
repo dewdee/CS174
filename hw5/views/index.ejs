@@ -10,10 +10,10 @@
     <h1>...But letting people know when the time comes.</h1>
     <form id="purchase-form" method="post" action="/charge">
         <input type="hidden" id="credit-token" name="credit_token" value="" />
-        <p><label for="email">Email:</label><input type="text" id="email" placeholder="Enter in email" /></p>
-        <p><label for="amount">Amount:</label><input type="text" id="amount" size="2" name="amount" value="$5" disabled /></p>
-        <p><label for="card-number">Card Number:</label><input type="text" id="card-number" size="20" data-stripe='number' name="card-number" /></p>
-        <p><label for="cvc">CVC:</label><input type="text" id="cvc" size="4" data-stripe='cvc' name="cvc" /></p>
+        <p><label for="email">Email: </label><input type="text" id="email" name="email" placeholder="Enter in email" /></p>
+        <p><label for="amount">Amount: </label><input type="text" id="amount" size="10" name="amount" value="$5" disabled /></p>
+        <p><label for="card-number">Card Number: </label><input type="text" id="card-number" size="20" data-stripe='number' name="card-number" /></p>
+        <p><label for="cvc">CVC: </label><input type="text" id="cvc" size="4" data-stripe='cvc' name="cvc" /></p>
         <p><label>Expires:</label>
             <select id="exp-month" data-stripe='exp-month' name="exp-month">
                 <option>Month</option>

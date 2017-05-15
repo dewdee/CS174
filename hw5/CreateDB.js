@@ -1,7 +1,6 @@
 /*
 The grader can use the line node CreateDB.js to create your mysql database.
 The database has a table USER(ID, EMAIL, LAST_CHECK_IN, LAST_EMAIL_SENT, NOTIFY_LIST, MESSAGE).
-LAST_CHECK_IN, LAST_EMAIL_SENT are Unix timestamps which are initially 0.
 */
 
 var mysql = require('mysql');
@@ -20,7 +19,10 @@ connection.query('CREATE DATABASE IF NOT EXISTS hw5_mn',
 connection.query('USE hw5_mn', function(error, results, fields) {
     if (error) throw error;
 });
-connection.query('CREATE TABLE IF NOT EXISTS USER(ID INTEGER AUTO_INCREMENTING, EMAIL TEXT, LAST_CHECK_IN TIMESTAMP, LAST_EMAIL_SENT TIMESTAMP, NOTIFY_LIST TEXT, MESSAGE TEXT)',
+connection.query('DROP TABLE IF EXISTS USER', function(error, results, fields) {
+    if (error) throw error;
+});
+connection.query('CREATE TABLE user(id INT(10) NOT NULL AUTO_INCREMENT, email TEXT, last_check_in TIMESTAMP, last_email_sent TIMESTAMP, notify_list TEXT, message TEXT, PRIMARY KEY(id))',
     function(error, results, fields) {
         if (error) throw error;
     }

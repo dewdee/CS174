@@ -13,7 +13,7 @@ var config = {
     "PUBLISHABLE_KEY": "pk_test_LXsVjQmkeQlbv5lSfZPHbYSi",
     "CHARGE_URL": "https://api.stripe.com/v1/charges",
     "CHARGE_CURRENCY": "usd",
-    "CHARGE_DESCRIPTION": "Buyer sees this on their statement",
+    "CHARGE_DESCRIPTION": "Not-Dead-Yet service charge",
     "CHARGE_USERAGENT": "CreditCardTester",
     "TIMEOUT": 20
 

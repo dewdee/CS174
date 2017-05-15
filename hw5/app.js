@@ -47,7 +47,8 @@ app.get('/', function(req, res) {
     res.render('index', { 'PUBLISHABLE_KEY': config.PUBLISHABLE_KEY });
 });
 app.post('/charge', function(req, res) {
-    //res.render('checkin');
+    /*here we use the request module to make a stripe request using
+      the token we received from our form*/
     request.post({
             url: config.CHARGE_URL,
             form: {
@@ -65,33 +66,41 @@ app.post('/charge', function(req, res) {
         },
         function(err, http_response, body) {
             stripe_result = JSON.parse(body);
+            //If charge fails, refresh landing page
             if (typeof stripe_result.status === 'undefined') {
                 if (typeof stripe_result.message === 'undefined') {
-                    /*res.render('message', {
-                        'message': req.body.amount +
-                            "charge did not do through!<br />" +
-                            stripe_result.credit_message
-                    });*/
-                    res.render('checkin');
+                    console.log("Charge did not go through");
+                    res.render('index');
                 }
             } else if (stripe_result.status == 'succeeded') {
-                res.render('checkin');
-                /*
-                res.render('checkin', {
-                    'checkin': req.body.amount +
-                        "charged"
+                //Add our new user's information to database and send that to render
+                //LAST_CHECK_IN, LAST_EMAIL_SENT initially 0
+                console.log(req.body.credit_token);
+                var email = req.body.email;
+                var sql = mysql.format('INSERT INTO USER VALUES(null, ?, 0, 0, "", "")', [email]);
+                console.log(sql);
+                connection.query(sql, function(error, results, fields) {
+                    if (error) throw error;
                 });
-                */
+                //render the page view with user information
+                res.render('checkin', { 'email': email });
+                console.log("$5 charged");
             }
         }
     );
 });
+app.post('/checkin', function(req, res) {
 
-app.listen(3000, function() {
-    console.log('Server up!')
 });
-
-/*setInterval(function emailJob() {
+/*
+emailJob uses queries to check for all user whose LAST_CHECK_IN, LAST_EMAIL_SENT are both 0, and 
+    send them an initial Check-In Email.
+emailJob gets all users such that LAST_CHECK_IN < LAST_EMAIL_SENT and (current time - LAST_EMAIL_SENT) > notify_delay and 
+    send each person on in their NOTIFY_LIST column the appropriate Notify Let-Know List Email.
+emailJob gets all users such that LAST_EMAIL_SENT < LAST_CHECK_IN and (current time - LAST_CHECK_IN) > check_in_frequency and 
+    send these users the appropriate Check-In Email.
+*/
+/*function emailJob(from, to) {
     // create reusable transporter object using the default SMTP transport
     var transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -103,9 +112,9 @@ app.listen(3000, function() {
 
     // setup email data with unicode symbols
     var mailOptions = {
-        from: '"Fred Foo 👻" <foo@blurdybloop.com>', // sender address
-        to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers
-        subject: 'Hello ✔', // Subject line
+        from: from, // sender address
+        to: to, // list of receivers
+        subject: 'Check-In Email', // Subject line
         text: 'Hello world ?', // plain text body
         html: '<b>Hello world ?</b>' // html body
     };
@@ -117,4 +126,11 @@ app.listen(3000, function() {
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
     });
-}, config.email_job_frequency);*/
+}*/
+app.listen(3000, function() {
+    console.log('Server up!')
+});
+
+setInterval(function emailJob() {
+    //emailJob();
+}, config.email_job_frequency);
