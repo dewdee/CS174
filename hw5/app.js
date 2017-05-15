@@ -133,8 +133,7 @@ app.post('/checkin', function(req, res) {
 function getLastCheckIn(email, callback) {
     sql = mysql.format('SELECT email, message, notify_list, last_check_in FROM user WHERE email = ?', [email]);
     var query = connection.query(sql);
-    query.on('result', function(error, row) {
-        if (error) throw error;
+    query.on('result', function(row) {
         callback(null, row);
     });
 }
