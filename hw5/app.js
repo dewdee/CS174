@@ -10,7 +10,7 @@ Client-side Javascript is used to validate form data for both the landing page a
 */
 var body_parser = require('body-parser'); //to handle posted data
 var express = require('express');
-//const nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
 var request = require('request');
 
 var path = require('path'); // for directory paths
@@ -108,11 +108,13 @@ app.post('/checkin', function(req, res) {
     var message = req.body.message;
     var emailList = JSON.stringify(req.body.emailList);
     var timestamp = new Date().toLocaleString();
+
     var sql = mysql.format('UPDATE user SET last_check_in = ?, message = ?, notify_list = ? WHERE email = ?', [timestamp, message, emailList, email]);
     connection.query(sql, function(error, results, fields) {
         if (error) throw error;
     });
 
+    //render checkin page again with new information
     var lastcheckin;
     getLastCheckIn(email, function(error, results) {
         if (error) throw error;
@@ -127,44 +129,93 @@ app.post('/checkin', function(req, res) {
     console.log(email + " checked in");
 });
 /*
-emailJob uses queries to check for all user whose LAST_CHECK_IN, LAST_EMAIL_SENT are both 0, and 
+emailJob uses queries to check for all user whose last_check_in, LAST_EMAIL_SENT are both 0, and 
     send them an initial Check-In Email. 
-    SELECT * FROM user WHERE LAST_CHECK_IN = 0 AND LAST_EMAIL_SENT = 0
-emailJob gets all users such that LAST_CHECK_IN < LAST_EMAIL_SENT AND (current time - LAST_EMAIL_SENT) > notify_delay and 
+emailJob gets all users such that last_check_in < last_email_sent AND (current time - last_email_sent) > notify_delay and 
     send each person on in their NOTIFY_LIST column the appropriate Notify Let-Know List Email.
-    SELECT * FROM user WHERE LAST_CHECK_IN < LAST_EMAIL_SENT AND (current_time - LAST_EMAIL_SENT) > notify_delay)
-    use prepared statement for current_time and notify_delay
-emailJob gets all users such that LAST_EMAIL_SENT < LAST_CHECK_IN and (current time - LAST_CHECK_IN) > check_in_frequency and 
+emailJob gets all users such that last_email_sent < last_check_in and (current time - last_email_sent) > check_in_frequency and 
     send these users the appropriate Check-In Email.
-    SELECT * FROM user WHERE LAST_EMAIL_SENT < LAST_CHECK_IN AND (current_time - LAST_EMAIL_SENT) > check_in_frequency
 */
-/*function emailJob(from, to) {
-    // create reusable transporter object using the default SMTP transport
+function emailJob(from) {
+    var current_time = new Date().toLocaleString();
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'mikeyng93@gmail.com',
-            pass: 'yourpass'
+            user: config.email_user,
+            pass: config.email_password
         }
     });
-
-    // setup email data with unicode symbols
-    var mailOptions = {
-        from: from, // sender address
-        to: to, // list of receivers
-        subject: 'Check-In Email', // Subject line
-        text: 'Hello world ?', // plain text body
-        html: '<b>Hello world ?</b>' // html body
-    };
-
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
+    var initialSQL = mysql.format('SELECT * FROM user WHERE last_check_in = 0 AND last_email_sent = 0');
+    connection.query(initialSQL, function(error, results, fields) {
+        if (error) throw error;
+        if (result) {
+            //send email
         }
-        console.log('Message %s sent: %s', info.messageId, info.response);
+        var mailOptions = {
+            from: '"Fred Foo 👻" <foo@blurdybloop.com>', // sender address
+            to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers
+            subject: 'Hello ✔', // Subject line
+            text: 'Hello world ?', // plain text body
+            html: '<b>Hello world ?</b>' // html body
+        };
     });
-}*/
+
+    var notifySQL = mysql.format('SELECT * FROM user WHERE last_check_in < last_email_sent AND (? - last_email_sent) > ?)', [current_time, config.notify_delay]);
+    connection.query(notifySQL, function(error, results, fields) {
+        if (error) throw error;
+        if (result) {
+            //send email
+        }
+        var mailOptions = {
+            from: '"Fred Foo 👻" <foo@blurdybloop.com>', // sender address
+            to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers
+            subject: 'Hello ✔', // Subject line
+            text: 'Hello world ?', // plain text body
+            html: '<b>Hello world ?</b>' // html body
+        };
+    });
+
+    var checkinSQL = mysql.format('SELECT * FROM user WHERE last_email_sent < last_check_in AND (? - last_email_sent) > ?)', [current_time, config.check_in_frequency]);
+    connection.query(checkinSQL, function(error, results, fields) {
+        if (error) throw error;
+        if (result) {
+            //send email
+        }
+        var mailOptions = {
+            from: '"Fred Foo 👻" <foo@blurdybloop.com>', // sender address
+            to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers
+            subject: 'Hello ✔', // Subject line
+            text: 'Hello world ?', // plain text body
+            html: '<b>Hello world ?</b>' // html body
+        };
+    });
+
+    /*    // create reusable transporter object using the default SMTP transport
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'mikeyng93@gmail.com',
+                pass: 'yourpass'
+            }
+        });
+
+        // setup email data with unicode symbols
+        var mailOptions = {
+            from: from, // sender address
+            to: to, // list of receivers
+            subject: 'Check-In Email', // Subject line
+            text: 'Hello world ?', // plain text body
+            html: '<b>Hello world ?</b>' // html body
+        };
+
+        // send mail with defined transport object
+        transporter.sendMail(mailOptions, function(error, info) {
+            if (error) {
+                return console.log(error);
+            }
+            console.log('Message %s sent: %s', info.messageId, info.response);
+        });*/
+}
 
 //Callback function to get last check in
 function getLastCheckIn(email, callback) {
@@ -175,7 +226,7 @@ function getLastCheckIn(email, callback) {
     });
 }
 
-setInterval(function emailJob() {
+setInterval(function() {
     //emailJob();
 }, config.email_job_frequency);
 
