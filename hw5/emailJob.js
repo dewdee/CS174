@@ -43,11 +43,12 @@ var emailJob = {
                             subject: 'Check-In Email', // Subject line
                             text: emailString
                         };
+                        console.log('Checkin sending From: %s To: %s', from, recipient);
                         transporter.sendMail(mailOptions, function(error, info) {
                             if (error) {
                                 return console.log(error);
                             }
-                            console.log('Inital Message Sent. From: %s To: %s', from, recipient);
+                            console.log('Inital Message Sent. Id: %s Res: %s', info.messageId, info.response);
                         });
                         current_time = new Date();
                         var sql = mysql.format('UPDATE user SET last_email_sent = ? WHERE email = ?', [current_time, recipient]);
@@ -77,10 +78,10 @@ var emailJob = {
                                 subject: 'Notify Email', // Subject line
                                 text: emailString
                             };
+                            console.log('Notification sending From: %s To: %s', from, recipient);
                             transporter.sendMail(mailOptions, function(error, info) {
                                 if (error) return console.log(error);
                                 console.log('Notification Message Sent. Id: %s Res: %s', info.messageId, info.response);
-                                //console.log('Notification Message Sent. From: %s To: %s', from, recipient);
                             });
                         }
                     }
@@ -102,11 +103,11 @@ var emailJob = {
                             subject: 'Check-In Email', // Subject line
                             text: emailString
                         };
+                        console.log('Checkin sending From: %s To: %s', from, recipient);
                         transporter.sendMail(mailOptions, function(error, info) {
                             if (error) return console.log(error);
 
                             console.log('Checkin Message Sent. Id: %s Res: %s', info.messageId, info.response);
-                            //console.log('Checkin Message Sent. From: %s To: %s', from, recipient);
                         });
                         current_time = new Date();
                         var sql = mysql.format('UPDATE user SET last_email_sent = ? WHERE email = ?', [current_time, recipient]);

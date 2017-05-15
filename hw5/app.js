@@ -138,7 +138,7 @@ function getLastCheckIn(email, callback) {
 }
 
 setInterval(function() {
-    //emailJob.emailJob();
+    emailJob.emailJob();
 }, config.email_job_frequency);
 
 app.listen(3000, function() {
