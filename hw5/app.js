@@ -89,6 +89,20 @@ app.post('/charge', function(req, res) {
         }
     );
 });
+app.get('/checkin*', function(req, res) {
+    var email = req.query.email;
+    var message = "";
+
+    var lastcheckin;
+    getLastCheckIn(email, function(error, results) {
+        if (error) throw error;
+        message = results.message;
+        lastcheckin = results.last_check_in.toLocaleString();
+        notifylist = JSON.parse(results.notify_list);
+        var update = "Checked-in!";
+        res.render('checkin', { 'email': email, 'emailList': notifylist, 'lastcheckin': lastcheckin, 'message': message, 'update': "" });
+    });
+});
 app.post('/checkin', function(req, res) {
     var email = req.body.email;
     var message = req.body.message;
@@ -99,29 +113,19 @@ app.post('/checkin', function(req, res) {
         if (error) throw error;
     });
 
-    //Callback function to get last check in
-    function getLastCheckIn(email, callback) {
-        sql = mysql.format('SELECT email, message, last_check_in FROM user WHERE email = ?', [email]);
-        var query = connection.query(sql);
-        query.on('result', function(row) {
-            callback(null, row);
-        });
-    }
-
     var lastcheckin;
     getLastCheckIn(email, function(error, results) {
         if (error) throw error;
         email = results.email;
         message = results.message;
         lastcheckin = results.last_check_in.toLocaleString();
-        update = "Checked-in!";
-        res.render('checkin', { 'email': email, 'lastcheckin': lastcheckin, 'message': message, 'update': update });
+        notifylist = JSON.parse(results.notify_list);
+        var update = "Checked-in!";
+        res.render('checkin', { 'email': email, 'emailList': notifylist, 'lastcheckin': lastcheckin, 'message': message, 'update': update });
     });
     //res.render('checkin', { 'email': email, 'lastcheckin': lastcheckin, 'message': "" });
     console.log(email + " checked in");
 });
-
-
 /*
 emailJob uses queries to check for all user whose LAST_CHECK_IN, LAST_EMAIL_SENT are both 0, and 
     send them an initial Check-In Email. 
@@ -161,10 +165,20 @@ emailJob gets all users such that LAST_EMAIL_SENT < LAST_CHECK_IN and (current t
         console.log('Message %s sent: %s', info.messageId, info.response);
     });
 }*/
-app.listen(3000, function() {
-    console.log('Server up!')
-});
+
+//Callback function to get last check in
+function getLastCheckIn(email, callback) {
+    sql = mysql.format('SELECT email, message, notify_list, last_check_in FROM user WHERE email = ?', [email]);
+    var query = connection.query(sql);
+    query.on('result', function(row) {
+        callback(null, row);
+    });
+}
 
 setInterval(function emailJob() {
     //emailJob();
 }, config.email_job_frequency);
+
+app.listen(3000, function() {
+    console.log('Server up!')
+});
