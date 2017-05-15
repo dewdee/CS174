@@ -16,10 +16,9 @@
         <%=lastcheckin%>
     </h3>
 
-    <form id="checkin-form" method="post" action="/checkin">
-        <input type="hidden" id="credit-token" name="credit_token" value="" />
-        <p><label for="email">Current Email: </label><input type="text" id="email" name="email" value=<%=email%> /></p>
-        <p><label for="emailList">Let-Know List: </label><input type="text" id="emailList" name="emailList" placeholder="Comma separated emails" /></p>
+    <form id="checkin-form" method="post" action="/checkin?email=">
+        <p><label for="email">Current Email: </label><input type="text" id="email" name="email" value=<%=email %> /></p>
+        <p><label for="emailList">Let-Know List: </label><input type="text" id="emailList" name="emailList" value=<%=emailList %> /></p>
         <p><label for="message">Message</label></p>
         <textarea rows="10" cols="50" id="message" name="message"><%=message%></textarea>
         <p><input type="submit" id="checkin" name="Checkin" value="Check-in"></p>
@@ -27,7 +26,6 @@
     <h2>
         <%=update%>
     </h2>
-<<<<<<< HEAD
     <script>
         window.history.pushState(null, null, '/checkin?email=' + document.getElementById('email').value);
         //check if valid email
@@ -39,8 +37,6 @@
         }*/
         //check if emailList is comma separated
     </script>
-=======
->>>>>>> parent of 7d5a932... Get route added for a check-in URL
 </body>
 
 </html>
