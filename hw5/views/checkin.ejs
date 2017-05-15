@@ -21,7 +21,7 @@
         <p><label for="emailList">Let-Know List: </label><input type="text" id="emailList" name="emailList" value=<%=emailList %> /></p>
         <p><label for="message">Message</label></p>
         <textarea rows="10" cols="50" id="message" name="message"><%=message%></textarea>
-        <p><input type="submit" id="checkin" name="Checkin" value="Check-in"></p>
+        <p><input type="submit" id="checkin" name="Checkin" value="Check-in" onclick="validForm();"></p>
     </form>
     <h2>
         <%=update%>
@@ -29,12 +29,31 @@
     <script>
         window.history.pushState(null, null, '/checkin?email=' + document.getElementById('email').value);
         //check if valid email
-        /*var regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        var address = document.getElementById[email].value;
-        if (regex.test(email) == false) {
-            alert('Invalid Email Address');
-            return (false);
-        }*/
+        function validEmail(){
+            var regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            var address = document.getElementById[email].value;
+            if (regex.test(email) == false) {
+                alert('Invalid Email Address');
+                return false;
+            }
+        }
+        function validList(){
+            var regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            var address = document.getElementById[email].value;
+            if (regex.test(email) == false) {
+                alert('Invalid Email List');
+                return false;
+            }
+        }
+        function validForm(){
+            if(!validEmail()){
+                return false;
+            }
+            if(!validList()){
+                return false;
+            }
+        }
+
         //check if emailList is comma separated
     </script>
 </body>

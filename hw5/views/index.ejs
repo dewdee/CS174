@@ -44,9 +44,17 @@
             </select>
         </p>
         <p>Your card will be charged when you click the button below. A link will be mailed to you periodically that allows you to specify a message and who to send it to if you fail to check in</p>
-        <p><input type="submit" id="purchase" name="Purchase" value="Buy Peace-of-Mind"></p>
+        <p><input type="submit" id="purchase" name="Purchase" value="Buy Peace-of-Mind" onClick="validEmail();"></p>
     </form>
     <script>
+        function validEmail(){
+            var regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            var address = document.getElementById[email].value;
+            if (regex.test(email) == false) {
+                   alert('Invalid Email Address');
+                   return false;
+                }
+            }
         function elt(id) {
             return document.getElementById(id);
         }
