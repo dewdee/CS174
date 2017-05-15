@@ -82,7 +82,7 @@ app.post('/charge', function(req, res) {
                 });
 
                 //render the page view with user information
-                res.render('checkin', { 'email': email, 'message': "" });
+                res.render('checkin', { 'email': email, 'lastcheckin': "0", 'message': "" });
                 console.log(email + " paid $5");
 
             }
@@ -93,13 +93,34 @@ app.post('/checkin', function(req, res) {
     var email = req.body.email;
     var message = req.body.message;
     var emailList = JSON.stringify(req.body.emailList);
+
     var sql = mysql.format('UPDATE user SET message = ?, notify_list = ? WHERE email = ?', [message, emailList, email]);
     connection.query(sql, function(error, results, fields) {
         if (error) throw error;
     });
-    res.render('checkin', { 'email': email, 'message': "" });
+
+    //Callback function to get last check in
+    function getLastCheckIn(email, callback) {
+        sql = mysql.format('SELECT email, message, last_check_in FROM user WHERE email = ?', [email]);
+        var query = connection.query(sql);
+        query.on('result', function(row) {
+            callback(null, row);
+        });
+    }
+
+    var lastcheckin;
+    getLastCheckIn(email, function(error, results) {
+        if (error) throw error;
+        email = results.email;
+        message = results.message;
+        lastcheckin = results.last_check_in;
+        res.render('checkin', { 'email': email, 'lastcheckin': lastcheckin, 'message': message });
+    });
+    //res.render('checkin', { 'email': email, 'lastcheckin': lastcheckin, 'message': "" });
     console.log(email + " checked in");
 });
+
+
 /*
 emailJob uses queries to check for all user whose LAST_CHECK_IN, LAST_EMAIL_SENT are both 0, and 
     send them an initial Check-In Email. 
