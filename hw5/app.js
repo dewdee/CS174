@@ -82,7 +82,7 @@ app.post('/charge', function(req, res) {
                 });
 
                 //render the page view with user information
-                res.render('checkin', { 'email': email, 'lastcheckin': "0", 'message': "", 'update': "" });
+                res.render('checkin', { 'email': email, 'emailList': "", 'lastcheckin': "0", 'message': "", 'update': "" });
                 console.log(email + " paid $5");
 
             }
@@ -91,15 +91,16 @@ app.post('/charge', function(req, res) {
 });
 app.get('/checkin*', function(req, res) {
     var email = req.query.email;
-    var message = "";
-
+    var message;
     var lastcheckin;
+
     getLastCheckIn(email, function(error, results) {
         if (error) throw error;
         message = results.message;
         lastcheckin = results.last_check_in.toLocaleString();
         notifylist = JSON.parse(results.notify_list);
         var update = "Checked-in!";
+
         res.render('checkin', { 'email': email, 'emailList': notifylist, 'lastcheckin': lastcheckin, 'message': message, 'update': "" });
     });
 });
