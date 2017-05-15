@@ -76,18 +76,13 @@ app.post('/charge', function(req, res) {
                 //Add our new user's information to database and send that to render
                 //LAST_CHECK_IN, LAST_EMAIL_SENT initially 0
                 var email = req.body.email;
-                var sql = mysql.format('INSERT INTO USER VALUES(null, ?, 0, 0, "", "")', [email]);
-                connection.query(sql, function(error, results, fields) {
-                    if (error) throw error;
-                });
-
-                //get message from email
+                var sql = mysql.format('INSERT INTO user VALUES(null, ?, 0, 0, "", "")', [email]);
                 connection.query(sql, function(error, results, fields) {
                     if (error) throw error;
                 });
 
                 //render the page view with user information
-                res.render('checkin', { 'email': email, 'message': message });
+                res.render('checkin', { 'email': email, 'message': "" });
                 console.log("$5 charged");
 
             }
