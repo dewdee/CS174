@@ -89,6 +89,7 @@ app.post('/charge', function(req, res) {
         }
     );
 });
+<<<<<<< HEAD
 app.get('/checkin*', function(req, res) {
     var email = req.query.email;
     var message;
@@ -104,6 +105,8 @@ app.get('/checkin*', function(req, res) {
         res.render('checkin', { 'email': email, 'emailList': notifylist, 'lastcheckin': lastcheckin, 'message': message, 'update': "" });
     });
 });
+=======
+>>>>>>> parent of 7d5a932... Get route added for a check-in URL
 app.post('/checkin', function(req, res) {
     var email = req.body.email;
     var message = req.body.message;
@@ -115,20 +118,32 @@ app.post('/checkin', function(req, res) {
         if (error) throw error;
     });
 
+<<<<<<< HEAD
     //render checkin page again with new information
+=======
+    //Callback function to get last check in
+    function getLastCheckIn(email, callback) {
+        sql = mysql.format('SELECT email, message, last_check_in FROM user WHERE email = ?', [email]);
+        var query = connection.query(sql);
+        query.on('result', function(row) {
+            callback(null, row);
+        });
+    }
+
+>>>>>>> parent of 7d5a932... Get route added for a check-in URL
     var lastcheckin;
     getLastCheckIn(email, function(error, results) {
         if (error) throw error;
         email = results.email;
         message = results.message;
         lastcheckin = results.last_check_in.toLocaleString();
-        notifylist = JSON.parse(results.notify_list);
-        var update = "Checked-in!";
-        res.render('checkin', { 'email': email, 'emailList': notifylist, 'lastcheckin': lastcheckin, 'message': message, 'update': update });
+        update = "Checked-in!";
+        res.render('checkin', { 'email': email, 'lastcheckin': lastcheckin, 'message': message, 'update': update });
     });
     console.log(email + " checked in");
 });
 
+<<<<<<< HEAD
 //Callback function to get last check in
 function getLastCheckIn(email, callback) {
     sql = mysql.format('SELECT email, message, notify_list, last_check_in FROM user WHERE email = ?', [email]);
@@ -146,3 +161,52 @@ setInterval(function() {
 app.listen(3000, function() {
     console.log('Server up!')
 });
+=======
+
+/*
+emailJob uses queries to check for all user whose LAST_CHECK_IN, LAST_EMAIL_SENT are both 0, and 
+    send them an initial Check-In Email. 
+    SELECT * FROM user WHERE LAST_CHECK_IN = 0 AND LAST_EMAIL_SENT = 0
+emailJob gets all users such that LAST_CHECK_IN < LAST_EMAIL_SENT AND (current time - LAST_EMAIL_SENT) > notify_delay and 
+    send each person on in their NOTIFY_LIST column the appropriate Notify Let-Know List Email.
+    SELECT * FROM user WHERE LAST_CHECK_IN < LAST_EMAIL_SENT AND (current_time - LAST_EMAIL_SENT) > notify_delay)
+    use prepared statement for current_time and notify_delay
+emailJob gets all users such that LAST_EMAIL_SENT < LAST_CHECK_IN and (current time - LAST_CHECK_IN) > check_in_frequency and 
+    send these users the appropriate Check-In Email.
+    SELECT * FROM user WHERE LAST_EMAIL_SENT < LAST_CHECK_IN AND (current_time - LAST_EMAIL_SENT) > check_in_frequency
+*/
+/*function emailJob(from, to) {
+    // create reusable transporter object using the default SMTP transport
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'mikeyng93@gmail.com',
+            pass: 'yourpass'
+        }
+    });
+
+    // setup email data with unicode symbols
+    var mailOptions = {
+        from: from, // sender address
+        to: to, // list of receivers
+        subject: 'Check-In Email', // Subject line
+        text: 'Hello world ?', // plain text body
+        html: '<b>Hello world ?</b>' // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+}*/
+app.listen(3000, function() {
+    console.log('Server up!')
+});
+
+setInterval(function emailJob() {
+    //emailJob();
+}, config.email_job_frequency);
+>>>>>>> parent of 7d5a932... Get route added for a check-in URL
