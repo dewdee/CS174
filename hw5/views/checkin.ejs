@@ -8,9 +8,9 @@
 <body>
     <h1><a href="/">Not-Dead-Yet...</a></h1>
     <h1>...But time to check-in: </h1>
-    <h1>
+    <h2>
         <%=email%>
-    </h1>
+    </h2>
 
     <h3>Your last check-in was: </h3>
 
@@ -19,7 +19,7 @@
         <p><label for="email">Current Email: </label><input type="text" id="email" placeholder="Enter in email" /></p>
         <p><label for="emailList">Let-Know List: </label><input type="text" id="email" placeholder="Enter in email" /></p>
         <p><label for="message">Message</label></p>
-        <textarea rows="10" cols="50">Current message that would be sent if you don't check-in</textarea>
+        <textarea rows="10" cols="50"><%=message%></textarea>
         <p><input type="submit" id="checkin" name="Checkin" value="Check-in"></p>
     </form>
 
