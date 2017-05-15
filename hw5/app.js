@@ -78,7 +78,7 @@ app.post('/charge', function(req, res) {
                 var email = req.body.email;
                 var sql = mysql.format('INSERT INTO user VALUES(null, ?, 0, 0, "", "")', [email]);
                 connection.query(sql, function(error, results) {
-                    if (error) throw error;
+                    if (error) console.log(error);
                 });
 
                 //render the page view with user information
@@ -138,7 +138,7 @@ function getLastCheckIn(email, callback) {
 }
 
 setInterval(function() {
-    emailJob.emailJob();
+    //emailJob.emailJob();
 }, config.email_job_frequency);
 
 app.listen(3000, function() {

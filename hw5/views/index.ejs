@@ -44,13 +44,17 @@
             </select>
         </p>
         <p>Your card will be charged when you click the button below. A link will be mailed to you periodically that allows you to specify a message and who to send it to if you fail to check in</p>
-        <p><input type="submit" id="purchase" name="Purchase" value="Buy Peace-of-Mind" onClick="validEmail();"></p>
+        <p><input type="submit" id="purchase" name="Purchase" value="Buy Peace-of-Mind"></p>
     </form>
     <script>
         function validEmail(){
             var regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-            var address = document.getElementById[email].value;
-            if (regex.test(email) == false) {
+            var email = elt('email').value;
+            if(!email){
+                alert('Enter Email Address!');
+                return false;
+            }
+            else if (regex.test(email) == false) {
                    alert('Invalid Email Address');
                    return false;
                 }
@@ -60,9 +64,15 @@
         }
         elt('purchase').onclick = function(event) {
             var purchase_form = elt('purchase-form');
-            elt('purchase').disabled = true; // prevent additional clicks
-            Stripe.card.createToken(purchase_form, tokenResponseHandler);
-            event.preventDefault(); //prevent form submitting till get all clear
+            if(!validEmail()){
+                return false;
+            }
+            else{
+                elt('purchase').disabled = true; // prevent additional clicks
+                Stripe.card.createToken(purchase_form, tokenResponseHandler);
+                event.preventDefault(); //prevent form submitting till get all clear
+            }
+
         }
 
         function tokenResponseHandler(status, response) {
