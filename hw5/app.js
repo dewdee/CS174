@@ -97,9 +97,8 @@ app.get('/checkin*', function(req, res) {
     getLastCheckIn(email, function(error, results) {
         if (error) throw error;
         message = results.message;
-        lastcheckin = results.last_check_in.toLocaleString();
+        lastcheckin = results.last_check_in;
         notifylist = JSON.parse(results.notify_list);
-        var update = "Checked-in!";
 
         res.render('checkin', { 'email': email, 'emailList': notifylist, 'lastcheckin': lastcheckin, 'message': message, 'update': "" });
     });
@@ -108,7 +107,7 @@ app.post('/checkin', function(req, res) {
     var email = req.body.email;
     var message = req.body.message;
     var emailList = JSON.stringify(req.body.emailList);
-    var timestamp = new Date().toLocaleString();
+    var timestamp = new Date();
 
     var sql = mysql.format('UPDATE user SET last_check_in = ?, message = ?, notify_list = ? WHERE email = ?', [timestamp, message, emailList, email]);
     connection.query(sql, function(error, results) {
@@ -121,7 +120,7 @@ app.post('/checkin', function(req, res) {
         if (error) throw error;
         email = results.email;
         message = results.message;
-        lastcheckin = results.last_check_in.toLocaleString();
+        lastcheckin = results.last_check_in;
         notifylist = JSON.parse(results.notify_list);
         var update = "Checked-in!";
         res.render('checkin', { 'email': email, 'emailList': notifylist, 'lastcheckin': lastcheckin, 'message': message, 'update': update });
