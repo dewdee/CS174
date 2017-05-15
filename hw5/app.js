@@ -125,7 +125,6 @@ app.post('/checkin', function(req, res) {
         var update = "Checked-in!";
         res.render('checkin', { 'email': email, 'emailList': notifylist, 'lastcheckin': lastcheckin, 'message': message, 'update': update });
     });
-    //res.render('checkin', { 'email': email, 'lastcheckin': lastcheckin, 'message': "" });
     console.log(email + " checked in");
 });
 /*
@@ -140,7 +139,7 @@ function emailJob() {
     var from = config.email_user;
     var current_time = new Date().toLocaleString();
     var transporter = nodemailer.createTransport({
-        service: 'gmail',
+        service: config.email_service,
         auth: {
             user: config.email_user,
             pass: config.email_password
@@ -160,7 +159,7 @@ function emailJob() {
                         subject: 'Check-In Email', // Subject line
                         text: emailString
                     };
-                    transporter.sendMail(options, function(error, info) {
+                    transporter.sendMail(mailOptions, function(error, info) {
                         if (error) {
                             return console.log(error);
                         }
@@ -185,7 +184,7 @@ function emailJob() {
                         subject: 'Notify Email', // Subject line
                         text: emailString
                     };
-                    transporter.sendMail(options, function(error, info) {
+                    transporter.sendMail(mailOptions, function(error, info) {
                         if (error) {
                             return console.log(error);
                         }
@@ -196,7 +195,7 @@ function emailJob() {
         }
     });*/
 
-    var checkinSQL = mysql.format('SELECT email, FROM user WHERE last_email_sent < last_check_in AND (? - last_email_sent) > ?)', [current_time, config.check_in_frequency]);
+    /*var checkinSQL = mysql.format('SELECT email FROM user WHERE (last_email_sent < last_check_in) AND (? - last_email_sent) > ?)', [current_time, config.check_in_frequency]);
     connection.query(checkinSQL, function(error, results) {
         if (error) throw error;
         if (results) {
@@ -210,7 +209,7 @@ function emailJob() {
                         subject: 'Check-In Email', // Subject line
                         text: emailString
                     };
-                    transporter.sendMail(options, function(error, info) {
+                    transporter.sendMail(mailOptions, function(error, info) {
                         if (error) {
                             return console.log(error);
                         }
@@ -219,7 +218,7 @@ function emailJob() {
                 }
             }
         }
-    });
+    });*/
 }
 
 //Callback function to get last check in
@@ -233,6 +232,7 @@ function getLastCheckIn(email, callback) {
 }
 
 setInterval(function() {
+    console.log("Interval");
     emailJob();
 }, config.email_job_frequency);
 

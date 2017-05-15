@@ -16,7 +16,8 @@ var config = {
     "CHARGE_DESCRIPTION": "Not-Dead-Yet service charge",
     "CHARGE_USERAGENT": "CreditCardTester",
     "TIMEOUT": 20,
-    "email_user": "mikeyng93@gmail.com",
-    "email_password": "z!4kj@u#HQE1"
+    "email_user": "mikenagooyen@gmail.com",
+    "email_password": "mngg04wer1",
+    "email_service": "gmail"
 };
 module.exports = config;
