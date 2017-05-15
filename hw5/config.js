@@ -6,9 +6,9 @@ email_job_frequency, which controls how often the callback to send out a batch o
 */
 
 var config = {
-    "check_in_frequency": 60000,
-    "notify_delay": 60000,
-    "email_job_frequency": 10000,
+    "check_in_frequency": 60000, //1 minute check-in time frame
+    "notify_delay": 60000, //1 minute after failed check-in
+    "email_job_frequency": 5000,
     "SECRET_KEY": "sk_test_kUModSZHTxes6aCJlQjA8jTV",
     "PUBLISHABLE_KEY": "pk_test_LXsVjQmkeQlbv5lSfZPHbYSi",
     "CHARGE_URL": "https://api.stripe.com/v1/charges",

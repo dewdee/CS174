@@ -20,7 +20,6 @@ connection.connect();
 
 var emailJob = {
     "emailJob": function() {
-        console.log("Interval");
         var from = config.email_user;
         var current_time = new Date().toLocaleString();
         var transporter = nodemailer.createTransport({
