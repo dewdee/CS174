@@ -18,6 +18,9 @@ var config = {
     "TIMEOUT": 20,
     "email_user": "mikenagooyen@gmail.com",
     "email_password": "mngg04wer1",
-    "email_service": "gmail"
+    "email_service": "gmail",
+    "sql_user": "root",
+    "sql_password": "password",
+    "sql_db": "hw5_mn"
 };
 module.exports = config;
