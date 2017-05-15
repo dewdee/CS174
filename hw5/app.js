@@ -27,7 +27,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 var app = express();
-app.use(bodyParser.json());
+app.use(body_parser.json());
 app.use(body_parser.urlencoded({ extended: true }));
 
 // view engine setup

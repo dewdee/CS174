@@ -2,13 +2,14 @@
 The grader can use the line node CreateDB.js to create your mysql database.
 The database has a table USER(ID, EMAIL, LAST_CHECK_IN, LAST_EMAIL_SENT, NOTIFY_LIST, MESSAGE).
 */
-
+var path = require('path'); // for directory paths
+var config = require(path.join(__dirname, 'config'));
 var mysql = require('mysql');
 // set-up and connect
 var connection = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
-    password: 'password'
+    user: config.sql_user,
+    password: config.sql_password,
 });
 connection.connect();
 connection.query('CREATE DATABASE IF NOT EXISTS hw5_mn',

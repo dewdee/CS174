@@ -60,7 +60,7 @@ var emailJob = {
             }
         });
 
-        var notifySQL = mysql.format('SELECT email, notify_list FROM user WHERE (UNIX_TIMESTAMP(last_check_in) < UNIX_TIMESTAMP(last_email_sent)) AND (UNIX_TIMESTAMP(?) - UNIX_TIMESTAMP(last_email_sent)) > ?', [current_time, config.notify_delay / 1000]);
+        var notifySQL = mysql.format('SELECT email, notify_list, message FROM user WHERE (UNIX_TIMESTAMP(last_check_in) < UNIX_TIMESTAMP(last_email_sent)) AND (UNIX_TIMESTAMP(?) - UNIX_TIMESTAMP(last_email_sent)) > ?', [current_time, config.notify_delay / 1000]);
         connection.query(notifySQL, function(error, results) {
             if (error) throw error;
             if (results) {
@@ -68,10 +68,11 @@ var emailJob = {
                     for (var i = 0; i < results.length; i++) {
                         var deceased = results[i].email;
                         var emailList = results[i].notify_list;
+                        var message = results[i].message;
                         var emailListArr = emailList.replace(/\"/g, '').split(',');
-                        for(var j = 0; j < emailListArr.length; j++){
+                        for (var j = 0; j < emailListArr.length; j++) {
                             var recipient = emailListArr[j];
-                            var emailString = 'Dear ' + recipient + ' :\n\n' + deceased + ' has not checked-in with us during their\ncheck-in period. We are sending you the message below that was\nrequested to be sent by ' + deceased + 'if this happened.\n\n...Message that ' + deceased + ' left...\n\nBest regards,\nNot-Dead-Yet Team';
+                            var emailString = 'Dear ' + recipient + ' :\n\n' + deceased + ' has not checked-in with us during their\ncheck-in period. We are sending you the message below that was\nrequested to be sent by ' + deceased + 'if this happened.\n\n... ' + message + ' ...\n\nBest regards,\nNot-Dead-Yet Team';
                             var mailOptions = {
                                 from: from, // sender address
                                 to: recipient, // list of receivers
