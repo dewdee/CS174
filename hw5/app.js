@@ -83,22 +83,34 @@ app.post('/charge', function(req, res) {
 
                 //render the page view with user information
                 res.render('checkin', { 'email': email, 'message': "" });
-                console.log("$5 charged");
+                console.log(email + " paid $5");
 
             }
         }
     );
 });
 app.post('/checkin', function(req, res) {
-
+    var email = req.body.email;
+    var message = req.body.message;
+    var emailList = JSON.stringify(req.body.emailList);
+    var sql = mysql.format('UPDATE user SET message = ?, notify_list = ? WHERE email = ?', [message, emailList, email]);
+    connection.query(sql, function(error, results, fields) {
+        if (error) throw error;
+    });
+    res.render('checkin', { 'email': email, 'message': "" });
+    console.log(email + " checked in");
 });
 /*
 emailJob uses queries to check for all user whose LAST_CHECK_IN, LAST_EMAIL_SENT are both 0, and 
-    send them an initial Check-In Email.
-emailJob gets all users such that LAST_CHECK_IN < LAST_EMAIL_SENT and (current time - LAST_EMAIL_SENT) > notify_delay and 
+    send them an initial Check-In Email. 
+    SELECT * FROM user WHERE LAST_CHECK_IN = 0 AND LAST_EMAIL_SENT = 0
+emailJob gets all users such that LAST_CHECK_IN < LAST_EMAIL_SENT AND (current time - LAST_EMAIL_SENT) > notify_delay and 
     send each person on in their NOTIFY_LIST column the appropriate Notify Let-Know List Email.
+    SELECT * FROM user WHERE LAST_CHECK_IN < LAST_EMAIL_SENT AND (current_time - LAST_EMAIL_SENT) > notify_delay)
+    use prepared statement for current_time and notify_delay
 emailJob gets all users such that LAST_EMAIL_SENT < LAST_CHECK_IN and (current time - LAST_CHECK_IN) > check_in_frequency and 
     send these users the appropriate Check-In Email.
+    SELECT * FROM user WHERE LAST_EMAIL_SENT < LAST_CHECK_IN AND (current_time - LAST_EMAIL_SENT) > check_in_frequency
 */
 /*function emailJob(from, to) {
     // create reusable transporter object using the default SMTP transport

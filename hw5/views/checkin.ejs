@@ -16,13 +16,17 @@
 
     <form id="checkin-form" method="post" action="/checkin">
         <input type="hidden" id="credit-token" name="credit_token" value="" />
-        <p><label for="email">Current Email: </label><input type="text" id="email" placeholder="Enter in email" /></p>
-        <p><label for="emailList">Let-Know List: </label><input type="text" id="email" placeholder="Enter in email" /></p>
+        <p><label for="email">Current Email: </label><input type="text" id="email" name="email" value=<%=email%> /></p>
+        <p><label for="emailList">Let-Know List: </label><input type="text" id="emailList" name="emailList" placeholder="Comma separated emails" /></p>
         <p><label for="message">Message</label></p>
-        <textarea rows="10" cols="50"><%=message%></textarea>
+        <textarea rows="10" cols="50" id="message" name="message" value=<%=message%>></textarea>
         <p><input type="submit" id="checkin" name="Checkin" value="Check-in"></p>
     </form>
-
+    <script>
+        function elt(id) {
+            return document.getElementById(id);
+        }
+    </script>
 </body>
 
 </html>
