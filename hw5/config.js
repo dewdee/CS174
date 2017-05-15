@@ -17,6 +17,6 @@ var config = {
     "CHARGE_USERAGENT": "CreditCardTester",
     "TIMEOUT": 20,
     "email_user": "mikeyng93@gmail.com",
-    "email_password": "password"
+    "email_password": "z!4kj@u#HQE1"
 };
 module.exports = config;

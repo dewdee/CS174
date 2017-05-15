@@ -77,7 +77,7 @@ app.post('/charge', function(req, res) {
                 //LAST_CHECK_IN, LAST_EMAIL_SENT initially 0
                 var email = req.body.email;
                 var sql = mysql.format('INSERT INTO user VALUES(null, ?, 0, 0, "", "")', [email]);
-                connection.query(sql, function(error, results, fields) {
+                connection.query(sql, function(error, results) {
                     if (error) throw error;
                 });
 
@@ -110,7 +110,7 @@ app.post('/checkin', function(req, res) {
     var timestamp = new Date().toLocaleString();
 
     var sql = mysql.format('UPDATE user SET last_check_in = ?, message = ?, notify_list = ? WHERE email = ?', [timestamp, message, emailList, email]);
-    connection.query(sql, function(error, results, fields) {
+    connection.query(sql, function(error, results) {
         if (error) throw error;
     });
 
@@ -136,7 +136,8 @@ emailJob gets all users such that last_check_in < last_email_sent AND (current t
 emailJob gets all users such that last_email_sent < last_check_in and (current time - last_email_sent) > check_in_frequency and 
     send these users the appropriate Check-In Email.
 */
-function emailJob(from) {
+function emailJob() {
+    var from = config.email_user;
     var current_time = new Date().toLocaleString();
     var transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -145,89 +146,94 @@ function emailJob(from) {
             pass: config.email_password
         }
     });
-    var initialSQL = mysql.format('SELECT * FROM user WHERE last_check_in = 0 AND last_email_sent = 0');
-    connection.query(initialSQL, function(error, results, fields) {
+    var initialSQL = mysql.format('SELECT email FROM user WHERE last_check_in = 0 AND last_email_sent = 0');
+    connection.query(initialSQL, function(error, results) {
         if (error) throw error;
-        if (result) {
-            //send email
-        }
-        var mailOptions = {
-            from: '"Fred Foo 👻" <foo@blurdybloop.com>', // sender address
-            to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers
-            subject: 'Hello ✔', // Subject line
-            text: 'Hello world ?', // plain text body
-            html: '<b>Hello world ?</b>' // html body
-        };
-    });
-
-    var notifySQL = mysql.format('SELECT * FROM user WHERE last_check_in < last_email_sent AND (? - last_email_sent) > ?)', [current_time, config.notify_delay]);
-    connection.query(notifySQL, function(error, results, fields) {
-        if (error) throw error;
-        if (result) {
-            //send email
-        }
-        var mailOptions = {
-            from: '"Fred Foo 👻" <foo@blurdybloop.com>', // sender address
-            to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers
-            subject: 'Hello ✔', // Subject line
-            text: 'Hello world ?', // plain text body
-            html: '<b>Hello world ?</b>' // html body
-        };
-    });
-
-    var checkinSQL = mysql.format('SELECT * FROM user WHERE last_email_sent < last_check_in AND (? - last_email_sent) > ?)', [current_time, config.check_in_frequency]);
-    connection.query(checkinSQL, function(error, results, fields) {
-        if (error) throw error;
-        if (result) {
-            //send email
-        }
-        var mailOptions = {
-            from: '"Fred Foo 👻" <foo@blurdybloop.com>', // sender address
-            to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers
-            subject: 'Hello ✔', // Subject line
-            text: 'Hello world ?', // plain text body
-            html: '<b>Hello world ?</b>' // html body
-        };
-    });
-
-    /*    // create reusable transporter object using the default SMTP transport
-        var transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: 'mikeyng93@gmail.com',
-                pass: 'yourpass'
+        if (results) {
+            if (results.length > 0) {
+                for (var i = 0; i < results.length; i++) {
+                    var recipient = results[i].email;
+                    var emailString = 'Not-Dead-Yet...Time to Check-in!\n\nDear ' + recipient + ':\n\nPlease click the link below or copy it into your browser to check-in \nwith us and update your notify list.\n\nlocalhost:3000/checkin?email=' + recipient + '\n\nBest regards,\nNot-Dead-Yet Team';
+                    var mailOptions = {
+                        from: from, // sender address
+                        to: recipient, // list of receivers
+                        subject: 'Check-In Email', // Subject line
+                        text: emailString
+                    };
+                    transporter.sendMail(options, function(error, info) {
+                        if (error) {
+                            return console.log(error);
+                        }
+                        console.log('Message Sent. Id: %s Res: %s', info.messageId, info.response);
+                    });
+                }
             }
-        });
+        }
+    });
 
-        // setup email data with unicode symbols
-        var mailOptions = {
-            from: from, // sender address
-            to: to, // list of receivers
-            subject: 'Check-In Email', // Subject line
-            text: 'Hello world ?', // plain text body
-            html: '<b>Hello world ?</b>' // html body
-        };
-
-        // send mail with defined transport object
-        transporter.sendMail(mailOptions, function(error, info) {
-            if (error) {
-                return console.log(error);
+    /*var notifySQL = mysql.format('SELECT email, notify_list FROM user WHERE last_check_in < last_email_sent AND (? - last_email_sent) > ?)', [current_time, config.notify_delay]);
+    connection.query(notifySQL, function(error, results) {
+        if (error) throw error;
+        if (results) {
+            if (results.length > 0) {
+                for (var i = 0; i < results.length; i++) {
+                    var deceased = results[i].email;
+                    var emailString = 'Dear to_notify_person@notify-place.com:\n\n' + deceased + 'has not checked-in with us during their\ncheck-in period. We are sending you the message below that was\nrequested to be sent by ' + deceased + 'if this happened.\n\n...Message that ' + deceased + ' left...\n\nBest regards,\nNot-Dead-Yet Team';
+                    var mailOptions = {
+                        from: from, // sender address
+                        to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers
+                        subject: 'Notify Email', // Subject line
+                        text: emailString
+                    };
+                    transporter.sendMail(options, function(error, info) {
+                        if (error) {
+                            return console.log(error);
+                        }
+                        console.log('Message Sent. Id: %s Res: %s', info.messageId, info.response);
+                    });
+                }
             }
-            console.log('Message %s sent: %s', info.messageId, info.response);
-        });*/
+        }
+    });*/
+
+    var checkinSQL = mysql.format('SELECT email, FROM user WHERE last_email_sent < last_check_in AND (? - last_email_sent) > ?)', [current_time, config.check_in_frequency]);
+    connection.query(checkinSQL, function(error, results) {
+        if (error) throw error;
+        if (results) {
+            if (results.length > 0) {
+                for (var i = 0; i < results.length; i++) {
+                    var recipient = results[i].email;
+                    var emailString = 'Not-Dead-Yet...Time to Check-in!\n\nDear' + recipient + ':\n\nPlease click the link below or copy it into your browser to check-in \nwith us and update your notify list.\n\nlocalhost:3000/checkin?email=' + recipient + '\n\nBest regards,\nNot-Dead-Yet Team';
+                    var mailOptions = {
+                        from: from, // sender address
+                        to: recipient, // list of receivers
+                        subject: 'Check-In Email', // Subject line
+                        text: emailString
+                    };
+                    transporter.sendMail(options, function(error, info) {
+                        if (error) {
+                            return console.log(error);
+                        }
+                        console.log('Message Sent. Id: %s Res: %s', info.messageId, info.response);
+                    });
+                }
+            }
+        }
+    });
 }
 
 //Callback function to get last check in
 function getLastCheckIn(email, callback) {
     sql = mysql.format('SELECT email, message, notify_list, last_check_in FROM user WHERE email = ?', [email]);
     var query = connection.query(sql);
-    query.on('result', function(row) {
+    query.on('result', function(error, row) {
+        if (error) throw error;
         callback(null, row);
     });
 }
 
 setInterval(function() {
-    //emailJob();
+    emailJob();
 }, config.email_job_frequency);
 
 app.listen(3000, function() {
