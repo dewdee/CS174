@@ -163,7 +163,11 @@ function emailJob() {
                         if (error) {
                             return console.log(error);
                         }
-                        console.log('Message Sent. Id: %s Res: %s', info.messageId, info.response);
+                        console.log('Inital Message Sent. From: %s To: %s', from, recipient);
+                    });
+                    var sql = mysql.format('UPDATE user SET last_email_sent = ? WHERE email = ?', [current_time, recipient]);
+                    connection.query(sql, function(error, results) {
+                        if (error) throw error;
                     });
                 }
             }
@@ -188,14 +192,14 @@ function emailJob() {
                         if (error) {
                             return console.log(error);
                         }
-                        console.log('Message Sent. Id: %s Res: %s', info.messageId, info.response);
+                        console.log('Notification Message Sent. Id: %s Res: %s', info.messageId, info.response);
                     });
                 }
             }
         }
     });*/
 
-    /*var checkinSQL = mysql.format('SELECT email FROM user WHERE (last_email_sent < last_check_in) AND (? - last_email_sent) > ?)', [current_time, config.check_in_frequency]);
+    var checkinSQL = mysql.format('SELECT email FROM user WHERE (last_email_sent < last_check_in) AND (? - last_email_sent) > ?', [current_time, config.check_in_frequency]);
     connection.query(checkinSQL, function(error, results) {
         if (error) throw error;
         if (results) {
@@ -213,12 +217,16 @@ function emailJob() {
                         if (error) {
                             return console.log(error);
                         }
-                        console.log('Message Sent. Id: %s Res: %s', info.messageId, info.response);
+                        console.log('Checkin Message Sent. From: %s To: %s', from, recipient);
+                    });
+                    var sql = mysql.format('UPDATE user SET last_email_sent = ? WHERE email = ?', [current_time, recipient]);
+                    connection.query(sql, function(error, results) {
+                        if (error) throw error;
                     });
                 }
             }
         }
-    });*/
+    });
 }
 
 //Callback function to get last check in
