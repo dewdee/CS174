@@ -22,7 +22,7 @@ connection.query('USE hw5_mn', function(error, results, fields) {
 connection.query('DROP TABLE IF EXISTS USER', function(error, results, fields) {
     if (error) throw error;
 });
-connection.query('CREATE TABLE user(id INT(10) NOT NULL AUTO_INCREMENT, email VARCHAR(100), last_check_in TIMESTAMP, last_email_sent TIMESTAMP, notify_list TEXT, message TEXT, UNIQUE(email), PRIMARY KEY(id))',
+connection.query('CREATE TABLE user(id INT(10) NOT NULL AUTO_INCREMENT, email VARCHAR(100), last_check_in DATETIME, last_email_sent DATETIME, notify_list TEXT, message TEXT, UNIQUE(email), PRIMARY KEY(id))',
     function(error, results, fields) {
         if (error) throw error;
     }

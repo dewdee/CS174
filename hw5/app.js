@@ -82,7 +82,7 @@ app.post('/charge', function(req, res) {
                 });
 
                 //render the page view with user information
-                res.render('checkin', { 'email': email, 'lastcheckin': "0", 'message': "" });
+                res.render('checkin', { 'email': email, 'lastcheckin': "0", 'message': "", 'update': "" });
                 console.log(email + " paid $5");
 
             }
@@ -93,8 +93,8 @@ app.post('/checkin', function(req, res) {
     var email = req.body.email;
     var message = req.body.message;
     var emailList = JSON.stringify(req.body.emailList);
-
-    var sql = mysql.format('UPDATE user SET message = ?, notify_list = ? WHERE email = ?', [message, emailList, email]);
+    var timestamp = new Date().toLocaleString();
+    var sql = mysql.format('UPDATE user SET last_check_in = ?, message = ?, notify_list = ? WHERE email = ?', [timestamp, message, emailList, email]);
     connection.query(sql, function(error, results, fields) {
         if (error) throw error;
     });
@@ -113,8 +113,9 @@ app.post('/checkin', function(req, res) {
         if (error) throw error;
         email = results.email;
         message = results.message;
-        lastcheckin = results.last_check_in;
-        res.render('checkin', { 'email': email, 'lastcheckin': lastcheckin, 'message': message });
+        lastcheckin = results.last_check_in.toLocaleString();
+        update = "Checked-in!";
+        res.render('checkin', { 'email': email, 'lastcheckin': lastcheckin, 'message': message, 'update': update });
     });
     //res.render('checkin', { 'email': email, 'lastcheckin': lastcheckin, 'message': "" });
     console.log(email + " checked in");
