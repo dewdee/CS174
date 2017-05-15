@@ -78,10 +78,9 @@ var emailJob = {
                                 text: emailString
                             };
                             transporter.sendMail(mailOptions, function(error, info) {
-                                if (error) {
-                                    return console.log(error);
-                                }
-                                console.log('Notification Message Sent. From: %s To: %s', from, recipient);
+                                if (error) return console.log(error);
+                                console.log('Notification Message Sent. Id: %s Res: %s', info.messageId, info.response);
+                                //console.log('Notification Message Sent. From: %s To: %s', from, recipient);
                             });
                         }
                     }
@@ -104,10 +103,10 @@ var emailJob = {
                             text: emailString
                         };
                         transporter.sendMail(mailOptions, function(error, info) {
-                            if (error) {
-                                return console.log(error);
-                            }
-                            console.log('Checkin Message Sent. From: %s To: %s', from, recipient);
+                            if (error) return console.log(error);
+
+                            console.log('Checkin Message Sent. Id: %s Res: %s', info.messageId, info.response);
+                            //console.log('Checkin Message Sent. From: %s To: %s', from, recipient);
                         });
                         current_time = new Date();
                         var sql = mysql.format('UPDATE user SET last_email_sent = ? WHERE email = ?', [current_time, recipient]);
