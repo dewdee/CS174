@@ -75,16 +75,21 @@ app.post('/charge', function(req, res) {
             } else if (stripe_result.status == 'succeeded') {
                 //Add our new user's information to database and send that to render
                 //LAST_CHECK_IN, LAST_EMAIL_SENT initially 0
-                console.log(req.body.credit_token);
                 var email = req.body.email;
                 var sql = mysql.format('INSERT INTO USER VALUES(null, ?, 0, 0, "", "")', [email]);
-                console.log(sql);
                 connection.query(sql, function(error, results, fields) {
                     if (error) throw error;
                 });
+
+                //get message from email
+                connection.query(sql, function(error, results, fields) {
+                    if (error) throw error;
+                });
+
                 //render the page view with user information
-                res.render('checkin', { 'email': email });
+                res.render('checkin', { 'email': email, 'message': message });
                 console.log("$5 charged");
+
             }
         }
     );
