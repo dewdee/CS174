@@ -21,31 +21,50 @@
         <p><label for="emailList">Let-Know List: </label><input type="text" id="emailList" name="emailList" value=<%=emailList %> /></p>
         <p><label for="message">Message</label></p>
         <textarea rows="10" cols="50" id="message" name="message"><%=message%></textarea>
-        <p><input type="submit" id="checkin" name="Checkin" value="Check-in" onclick="validForm();"></p>
+        <p><input type="submit" id="checkin" name="Checkin" value="Check-in"></p>
     </form>
     <h2>
         <%=update%>
     </h2>
     <script>
+        function elt(id) {
+            return document.getElementById(id);
+        }
         window.history.pushState(null, null, '/checkin?email=' + document.getElementById('email').value);
         //check if valid email
         function validEmail(){
             var regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-            var address = document.getElementById[email].value;
-            if (regex.test(email) == false) {
+            var email = elt('email').value;
+            if(!email){
+                alert('Enter Email Address!');
+                return false;
+            }
+            else if (regex.test(email) == false) {
                 alert('Invalid Email Address');
                 return false;
             }
+            return true;
         }
         function validList(){
             var regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-            var address = document.getElementById[email].value;
-            if (regex.test(email) == false) {
-                alert('Invalid Email List');
+            var list = elt('emailList').value
+            if(!list){
+                alert('Enter at least one Email Address!');
                 return false;
             }
+            else{
+                elt('emailList').value = list.replace(/\s/g,'');
+                var listArr = list.replace(/\s/g, '').split(',');
+                for(var i = 0; i < listArr.length; i++){
+                    if(regex.test(listArr[i]) == false){
+                        alert('Invalid email in list');
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
-        function validForm(){
+        elt('checkin').onclick = function(event){
             if(!validEmail()){
                 return false;
             }

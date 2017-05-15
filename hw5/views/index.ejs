@@ -55,10 +55,11 @@
                 return false;
             }
             else if (regex.test(email) == false) {
-                   alert('Invalid Email Address');
-                   return false;
-                }
+                alert('Invalid Email Address');
+                return false;
             }
+            return true;
+        }
         function elt(id) {
             return document.getElementById(id);
         }
